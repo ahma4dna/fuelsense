@@ -114,6 +114,240 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'بلاغاتي '**
   String get reports;
+
+  /// No description provided for @view_detail_st.
+  ///
+  /// In ar, this message translates to:
+  /// **'عرض التفاصيل'**
+  String get view_detail_st;
+
+  /// No description provided for @search_lable.
+  ///
+  /// In ar, this message translates to:
+  /// **'ابحث عن محطة...'**
+  String get search_lable;
+
+  /// No description provided for @station_details.
+  ///
+  /// In ar, this message translates to:
+  /// **'تفاصيل المحطة'**
+  String get station_details;
+
+  /// No description provided for @confdance_prob.
+  ///
+  /// In ar, this message translates to:
+  /// **'مؤشر الثقة'**
+  String get confdance_prob;
+
+  /// No description provided for @location_trak.
+  ///
+  /// In ar, this message translates to:
+  /// **'الاتجاهات'**
+  String get location_trak;
+
+  /// No description provided for @currnt_reports.
+  ///
+  /// In ar, this message translates to:
+  /// **'أخر البلاغات'**
+  String get currnt_reports;
+
+  /// No description provided for @good.
+  ///
+  /// In ar, this message translates to:
+  /// **'مفيد'**
+  String get good;
+
+  /// No description provided for @bad.
+  ///
+  /// In ar, this message translates to:
+  /// **'غير مفيد'**
+  String get bad;
+
+  /// No description provided for @confirm_station_state.
+  ///
+  /// In ar, this message translates to:
+  /// **'تأكيد حالة المحطة '**
+  String get confirm_station_state;
+
+  /// No description provided for @check_location.
+  ///
+  /// In ar, this message translates to:
+  /// **'التحقق من الموقع'**
+  String get check_location;
+
+  /// No description provided for @camera_shot.
+  ///
+  /// In ar, this message translates to:
+  /// **'إالتقاط صوره'**
+  String get camera_shot;
+
+  /// No description provided for @shot_ai.
+  ///
+  /// In ar, this message translates to:
+  /// **'تحليل الصوره'**
+  String get shot_ai;
+
+  /// No description provided for @send_report.
+  ///
+  /// In ar, this message translates to:
+  /// **'إرسال البلاغ'**
+  String get send_report;
+
+  /// No description provided for @success_send_report.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم إرسال البلاغ بنجاح'**
+  String get success_send_report;
+
+  /// No description provided for @success_send_report_subtitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'شكرآ لمساهمتك!'**
+  String get success_send_report_subtitle;
+
+  /// No description provided for @contion_check.
+  ///
+  /// In ar, this message translates to:
+  /// **'متابعة التحقق'**
+  String get contion_check;
+
+  /// No description provided for @succecss_checkh_location.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم التحقق من الموقع'**
+  String get succecss_checkh_location;
+
+  /// No description provided for @error_checkh_location.
+  ///
+  /// In ar, this message translates to:
+  /// **'فشل التحقق من الموقع'**
+  String get error_checkh_location;
+
+  /// No description provided for @loading_loction.
+  ///
+  /// In ar, this message translates to:
+  /// **'جاري التحقق من الموقع'**
+  String get loading_loction;
+
+  /// No description provided for @success_cheeck_location_subtitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم التحقق من وجودك الفعلي عبر GPS. يمكنك الآن متابعةالتقاط الدليل البصري.'**
+  String get success_cheeck_location_subtitle;
+
+  /// No description provided for @you_inside_range_station.
+  ///
+  /// In ar, this message translates to:
+  /// **'انت داخل نطاق المحطة'**
+  String get you_inside_range_station;
+
+  /// No description provided for @plese_check_enable_location_and_nebrey_station.
+  ///
+  /// In ar, this message translates to:
+  /// **'يرجي التحقق من تفعيل اذونات الموقع وانك قريب من المحطة و إعادة المحاولة مره اخرى '**
+  String get plese_check_enable_location_and_nebrey_station;
+
+  /// No description provided for @retry.
+  ///
+  /// In ar, this message translates to:
+  /// **'إعادة المحاولة'**
+  String get retry;
+
+  /// No description provided for @contion.
+  ///
+  /// In ar, this message translates to:
+  /// **'متابعة'**
+  String get contion;
+
+  /// No description provided for @note_ai_analayze.
+  ///
+  /// In ar, this message translates to:
+  /// **'نتيجة AI لا تحدد حالة المحطة وحدها، بل تدخل ضمن مؤشرالثقة.'**
+  String get note_ai_analayze;
+
+  /// No description provided for @loading_ai.
+  ///
+  /// In ar, this message translates to:
+  /// **'جاري تحليل الصوره'**
+  String get loading_ai;
+
+  /// No description provided for @error_chck_ai_image.
+  ///
+  /// In ar, this message translates to:
+  /// **'فشل تحليل الصوره'**
+  String get error_chck_ai_image;
+
+  /// No description provided for @retry_chck_ai_image.
+  ///
+  /// In ar, this message translates to:
+  /// **'يرجي إعادة المحاولة مره اخرى'**
+  String get retry_chck_ai_image;
+
+  /// No description provided for @detect_car.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم التعرف علي '**
+  String get detect_car;
+
+  /// No description provided for @car.
+  ///
+  /// In ar, this message translates to:
+  /// **'مركبات'**
+  String get car;
+
+  /// No description provided for @qualtiy_analyze_ai.
+  ///
+  /// In ar, this message translates to:
+  /// **'دقة تحليل البصري'**
+  String get qualtiy_analyze_ai;
+
+  /// No description provided for @close.
+  ///
+  /// In ar, this message translates to:
+  /// **'مغلقة'**
+  String get close;
+
+  /// No description provided for @open.
+  ///
+  /// In ar, this message translates to:
+  /// **'مفتوحة'**
+  String get open;
+
+  /// No description provided for @unloading.
+  ///
+  /// In ar, this message translates to:
+  /// **'يتم التفريغ'**
+  String get unloading;
+
+  /// No description provided for @please_selcte_state_station.
+  ///
+  /// In ar, this message translates to:
+  /// **'يرجي تحديد حالة المحطة'**
+  String get please_selcte_state_station;
+
+  /// No description provided for @send_report_note.
+  ///
+  /// In ar, this message translates to:
+  /// **'بإرسالك البلاغ تؤكد أن المعلومات صحيحة لحظة التقاط الصورة.البلاغات المضللة تخفّض موثوقية حسابك.'**
+  String get send_report_note;
+
+  /// No description provided for @done_send_report.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم إرسال البلاغ بنجاح'**
+  String get done_send_report;
+
+  /// No description provided for @retern.
+  ///
+  /// In ar, this message translates to:
+  /// **'العودة'**
+  String get retern;
+
+  /// No description provided for @thank_you.
+  ///
+  /// In ar, this message translates to:
+  /// **'شكرآ لمساهمتك'**
+  String get thank_you;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -28,6 +28,7 @@ enum ReviewStatus {
 
 class StationState extends Equatable {
   final StationStatus stationStatus;
+  final List<StationModel> allStations;
   final List<StationModel> stations;
   final StationModel? selectedStation;
 
@@ -46,6 +47,7 @@ class StationState extends Equatable {
     this.stationStatus = StationStatus.initial,
     this.stateRendererType = StateRendererType.contentState,
     this.stations = const [],
+    this.allStations = const [],
     this.selectedStation,
     this.reportStatus = ReportStatus.initial,
     this.reports = const [],
@@ -58,6 +60,7 @@ class StationState extends Equatable {
   StationState copyWith({
     StationStatus? stationStatus,
     List<StationModel>? stations,
+    List<StationModel>? allStations,
     StationModel? selectedStation,
     ReportStatus? reportStatus,
     List<ReportModel>? reports,
@@ -78,6 +81,7 @@ class StationState extends Equatable {
       reviews: reviews ?? this.reviews,
       stateRendererType: stateRendererType ?? this.stateRendererType,
       failure: failure ?? this.failure,
+      allStations: allStations ?? this.allStations,
     );
   }
 
@@ -85,6 +89,7 @@ class StationState extends Equatable {
   List<Object?> get props => [
     stationStatus,
     stations,
+    allStations,
     selectedStation,
     reportStatus,
     reports,

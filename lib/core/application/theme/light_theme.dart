@@ -64,9 +64,10 @@ abstract class LightTheme {
       inputDecorationTheme: InputDecorationTheme(
         contentPadding: const EdgeInsets.symmetric(
           horizontal: AppPadding.p10,
-          vertical: AppPadding.p12,
+          vertical: AppPadding.p20,
         ),
         filled: true,
+
         fillColor: AppColors.lightInputBackground,
         labelStyle: AppStyles.getRgular(fontSize: AppSize.s20, context: context, color: AppColors.black),
         hintStyle: AppStyles.getRgular(fontSize: AppSize.s20, context: context, color: AppColors.black),
@@ -81,22 +82,22 @@ abstract class LightTheme {
             color: AppColors.border,
             width: AppSize.s1_5,
           ),
-          borderRadius: const BorderRadius.all(Radius.circular(AppSize.s16)),
+          borderRadius: const BorderRadius.all(Radius.circular(AppSize.s18)),
         ),
         // focused border
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: AppColors.primary, width: AppSize.s1_5),
-          borderRadius: const BorderRadius.all(Radius.circular(AppSize.s16)),
+          borderRadius: const BorderRadius.all(Radius.circular(AppSize.s18)),
         ),
         //error border
         errorBorder: OutlineInputBorder(
           borderSide: BorderSide(color: AppColors.lightError, width: AppSize.s1_5),
-          borderRadius: const BorderRadius.all(Radius.circular(AppSize.s16)),
+          borderRadius: const BorderRadius.all(Radius.circular(AppSize.s18)),
         ),
         // focused error border
         focusedErrorBorder: OutlineInputBorder(
           borderSide: BorderSide(color: AppColors.lightError, width: AppSize.s1_5),
-          borderRadius: const BorderRadius.all(Radius.circular(AppSize.s16)),
+          borderRadius: const BorderRadius.all(Radius.circular(AppSize.s18)),
         ),
       ),
 

@@ -37,13 +37,26 @@ class _MainScreenState extends State<MainScreen> {
         builder: (context, state) {
           final bloc = context.read<MainBloc>();
           return Scaffold(
-            body: _pages[state.currntIndex],
-            bottomNavigationBar: CustomBottomNavBar(
-              currentIndex: state.currntIndex,
-              onItemSelected: (selctedIndex) {
-                bloc.add(ChangeTabEvent(selctIndex: selctedIndex));
-              },
-              onAddPressed: () async {},
+            resizeToAvoidBottomInset: false,
+            body: Stack(
+              children: [
+                IndexedStack(
+                  index: state.currntIndex,
+                  children: _pages,
+                ),
+                Positioned(
+                  left: 0,
+                  right: 0,
+                  bottom: MediaQuery.paddingOf(context).bottom,
+                  child: CustomBottomNavBar(
+                    currentIndex: state.currntIndex,
+                    onItemSelected: (selctedIndex) {
+                      bloc.add(ChangeTabEvent(selctIndex: selctedIndex));
+                    },
+                    onAddPressed: () async {},
+                  ),
+                ),
+              ],
             ),
           );
         },

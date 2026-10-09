@@ -5,7 +5,7 @@ abstract class AppSize {
   static const double s0_06 = 0.06;
   static const double s0_1 = 0.1;
   static const double s0_12 = 0.12;
-  static const double s0_13= 0.13;
+  static const double s0_13 = 0.13;
   static const double s0_15 = 0.15;
   static const double s0_2 = 0.2;
   static const double s0_22 = 0.22;
@@ -42,8 +42,9 @@ abstract class AppSize {
   static const double s8 = 8.0;
   static const double s10 = 10.0;
   static const double s12 = 12.0;
+  static const double s13 = 13.0;
   static const double s14 = 14.0;
-  static const double s15= 15.0;
+  static const double s15 = 15.0;
   static const double s16 = 16.0;
   static const double s18 = 18.0;
   static const double s20 = 20.0;
@@ -55,7 +56,9 @@ abstract class AppSize {
   static const double s30 = 30.0;
   static const double s32 = 32.0;
   static const double s35 = 35.0;
+  static const double s38 = 38.0;
   static const double s40 = 40.0;
+  static const double s44 = 44.0;
   static const double s45 = 45.0;
   static const double s48 = 48.0;
   static const double s50 = 50.0;
@@ -64,6 +67,7 @@ abstract class AppSize {
   static const double s56 = 56.0;
   static const double s60 = 60.0;
   static const double s65 = 65.0;
+  static const double s66 = 66.0;
   static const double s70 = 70.0;
   static const double s75 = 75.0;
   static const double s80 = 80.0;
@@ -75,6 +79,7 @@ abstract class AppSize {
   static const double s110 = 110.0;
   static const double s120 = 120.0;
   static const double s130 = 130.0;
+  static const double s132 = 132.0;
   static const double s140 = 140.0;
   static const double s150 = 150.0;
   static const double s160 = 160.0;
@@ -89,6 +94,7 @@ abstract class AppSize {
   static const double s280 = 280.0;
   static const double s300 = 300.0;
   static const double s360 = 360.0;
+  static const double s374 = 374.0;
   static const double s440 = 440.0;
   static const double s550 = 550.0;
   static const double s800 = 800.0;

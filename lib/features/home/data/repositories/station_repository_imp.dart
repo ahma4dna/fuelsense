@@ -7,6 +7,7 @@ import 'package:fuelsense/core/data/network/safe_stream_call.dart';
 import 'package:fuelsense/core/domain/models/failure.dart';
 import 'package:fuelsense/core/data/network_info/network_info.dart';
 import 'package:fuelsense/features/home/domain/repositories/station_repository.dart';
+import 'package:injectable/injectable.dart';
 
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -14,6 +15,7 @@ import '../models/station_model.dart';
 import '../models/report_model.dart';
 import '../models/review_model.dart';
 
+@LazySingleton(as: StationRepository)
 class StationRepositoryImpl implements StationRepository {
   final SupabaseClient _client;
   final NetworkInfo _networkInfo;

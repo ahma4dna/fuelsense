@@ -21,70 +21,68 @@ class CustomBottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final AppContext appContext = AppContext.of(context);
 
-    return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
-        child: SizedBox(
-          height: 105,
-          child: Container(
-            height: 88,
-            padding: EdgeInsets.symmetric(horizontal: 5),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(38),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.06),
-                  blurRadius: 20,
-                  offset: const Offset(0, 5),
+    return Padding(
+      padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+      child: SizedBox(
+        height: 105,
+        child: Container(
+          height: 88,
+          padding: EdgeInsets.symmetric(horizontal: 5),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(38),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.06),
+                blurRadius: 20,
+                offset: const Offset(0, 5),
+              ),
+            ],
+          ),
+          child: Row(
+            children: [
+              // Home
+              Expanded(
+                child: _NavItem(
+                  index: 0,
+                  label: appContext.localText.home,
+                  icon: AppAssets.home,
+                  currentIndex: currentIndex,
+                  onTap: onItemSelected,
                 ),
-              ],
-            ),
-            child: Row(
-              children: [
-                // Home
-                Expanded(
-                  child: _NavItem(
-                    index: 0,
-                    label: appContext.localText.home,
-                    icon: AppAssets.home,
-                    currentIndex: currentIndex,
-                    onTap: onItemSelected,
-                  ),
+              ),
+              // Accounts
+              Expanded(
+                child: _NavItem(
+                  index: 1,
+                  label: appContext.localText.staions,
+                  icon: AppAssets.staions,
+                  currentIndex: currentIndex,
+                  onTap: onItemSelected,
                 ),
-                // Accounts
-                Expanded(
-                  child: _NavItem(
-                    index: 1,
-                    label: appContext.localText.staions,
-                    icon: AppAssets.staions,
-                    currentIndex: currentIndex,
-                    onTap: onItemSelected,
-                  ),
-                ),
+              ),
 
-                // Budgets
-                Expanded(
-                  child: _NavItem(
-                    index: 2,
-                    label: appContext.localText.reports,
-                    icon: AppAssets.reports,
-                    currentIndex: currentIndex,
-                    onTap: onItemSelected,
-                  ),
+              // Budgets
+              Expanded(
+                child: _NavItem(
+                  index: 2,
+                  label: appContext.localText.reports,
+                  icon: AppAssets.reports,
+                  currentIndex: currentIndex,
+                  onTap: onItemSelected,
                 ),
-                // Reports
-                Expanded(
-                  child: _NavItem(
-                    index: 3,
-                    label: appContext.localText.account,
-                    icon: AppAssets.account,
-                    currentIndex: currentIndex,
-                    onTap: onItemSelected,
-                  ),
+              ),
+              // Reports
+              Expanded(
+                child: _NavItem(
+                  index: 3,
+                  label: appContext.localText.account,
+                  icon: AppAssets.account,
+                  currentIndex: currentIndex,
+                  onTap: onItemSelected,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

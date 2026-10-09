@@ -10,8 +10,19 @@
 	<string>Fuelsense</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>نستخدم موقعك لعرض محطات الوقود القريبة منك .</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>نستخدم موقعك لعرض محطات الوقود القريبة منك .</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>NSCameraUsageDescription</key>
+    <string>نحتاج إلى صلاحية الكاميرا للتحقق من المحطة</string>
+	<key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>comgooglemaps</string>
+        <string>maps</string>
+    </array>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
