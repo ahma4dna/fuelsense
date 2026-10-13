@@ -17,9 +17,9 @@ import 'package:fuelsense/features/home/presentation/bloc/station/station_bloc.d
 import 'package:fuelsense/features/home/presentation/bloc/station/station_event.dart';
 import 'package:fuelsense/features/home/presentation/bloc/station/station_state.dart';
 import 'package:fuelsense/features/home/presentation/function/function_home_page.dart';
-import 'package:fuelsense/features/home/presentation/widgets/my_location_and_togle_style_map.dart';
-import 'package:fuelsense/features/home/presentation/widgets/search_staion_widget.dart';
-import 'package:fuelsense/features/home/presentation/widgets/station_widget.dart';
+import 'package:fuelsense/features/home/presentation/widgets/home_screen_widget/my_location_and_togle_style_map.dart';
+import 'package:fuelsense/features/home/presentation/widgets/home_screen_widget/search_staion_widget.dart';
+import 'package:fuelsense/features/home/presentation/widgets/home_screen_widget/station_widget.dart';
 import 'package:gap/gap.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
