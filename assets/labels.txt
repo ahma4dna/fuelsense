@@ -1,6 +1,0 @@
-Bus
-Car
-Truck
-person
-small bus
-taxi

@@ -4,7 +4,7 @@
     "account":"حسابي",
     "reports":"بلاغاتي ",
     "view_detail_st":"عرض التفاصيل",
-    "search_lable":"ابحث عن محطة...",
+    "search_lable":"ابحث عن اسم المحطة أو المدينة...",
     "station_details":"تفاصيل المحطة",
     "confdance_prob":"مؤشر الثقة",
     "location_trak":"الاتجاهات",
@@ -43,6 +43,19 @@
    "send_report":"إرسال البلاغ",
    "done_send_report":"تم إرسال البلاغ بنجاح",
    "retern":"العودة",
-   "thank_you":"شكرآ لمساهمتك"
+   "thank_you":"شكرآ لمساهمتك",
+   "map":"الخريطة",
+   "list_station":"المحطات",
+   "city_radar":"رادار المدن",
+   "settinges":"الاعدادات",
+   "km":"كم",
+   "station_statee":"حالة المحطة",
+   "route_nigber_station":"الطريق بجانب المحطة" ,
+   "letency":"تأخير" ,
+   "user_report_station":"آراء موثقة من المتواجدين اليوم" ,
+   "view_details_and_hitory_station":"عرض تفاصيل وسجل المحطة",
+   "open_route":"فتح المسار ",
+   "history_and_date_station":"سجل وتاريخ المحطة",
+   "reports_today_uers":"آراء المتواجدين اليوم "
  
 }

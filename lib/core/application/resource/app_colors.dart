@@ -4,9 +4,9 @@ abstract class AppColors {
   static const Color border = Color(0xFFE4E8EA);
   static const Color lightError = Color(0xFFC23B3B);
   static const Color lightInputBackground = Color(0xFFFFFFFF);
-  static const Color lightBackground = Color(0xFFF8FAFC);
+  static const Color lightBackground = Color(0xFFF5F3ED);
   static const Color lightSurface = Color(0xFFFFFFFF);
-  static const Color primary = Color(0xFF00BFA6);
+  static const Color primary = Color(0xFF0F6E67);
   static const Color transparent = Colors.transparent;
   static const Color black = Colors.black;
   static const Color white = Colors.white;

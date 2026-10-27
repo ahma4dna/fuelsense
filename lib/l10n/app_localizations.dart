@@ -124,7 +124,7 @@ abstract class AppLocalizations {
   /// No description provided for @search_lable.
   ///
   /// In ar, this message translates to:
-  /// **'ابحث عن محطة...'**
+  /// **'ابحث عن اسم المحطة أو المدينة...'**
   String get search_lable;
 
   /// No description provided for @station_details.
@@ -348,6 +348,84 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'شكرآ لمساهمتك'**
   String get thank_you;
+
+  /// No description provided for @map.
+  ///
+  /// In ar, this message translates to:
+  /// **'الخريطة'**
+  String get map;
+
+  /// No description provided for @list_station.
+  ///
+  /// In ar, this message translates to:
+  /// **'المحطات'**
+  String get list_station;
+
+  /// No description provided for @city_radar.
+  ///
+  /// In ar, this message translates to:
+  /// **'رادار المدن'**
+  String get city_radar;
+
+  /// No description provided for @settinges.
+  ///
+  /// In ar, this message translates to:
+  /// **'الاعدادات'**
+  String get settinges;
+
+  /// No description provided for @km.
+  ///
+  /// In ar, this message translates to:
+  /// **'كم'**
+  String get km;
+
+  /// No description provided for @station_statee.
+  ///
+  /// In ar, this message translates to:
+  /// **'حالة المحطة'**
+  String get station_statee;
+
+  /// No description provided for @route_nigber_station.
+  ///
+  /// In ar, this message translates to:
+  /// **'الطريق بجانب المحطة'**
+  String get route_nigber_station;
+
+  /// No description provided for @letency.
+  ///
+  /// In ar, this message translates to:
+  /// **'تأخير'**
+  String get letency;
+
+  /// No description provided for @user_report_station.
+  ///
+  /// In ar, this message translates to:
+  /// **'آراء موثقة من المتواجدين اليوم'**
+  String get user_report_station;
+
+  /// No description provided for @view_details_and_hitory_station.
+  ///
+  /// In ar, this message translates to:
+  /// **'عرض تفاصيل وسجل المحطة'**
+  String get view_details_and_hitory_station;
+
+  /// No description provided for @open_route.
+  ///
+  /// In ar, this message translates to:
+  /// **'فتح المسار '**
+  String get open_route;
+
+  /// No description provided for @history_and_date_station.
+  ///
+  /// In ar, this message translates to:
+  /// **'سجل وتاريخ المحطة'**
+  String get history_and_date_station;
+
+  /// No description provided for @reports_today_uers.
+  ///
+  /// In ar, this message translates to:
+  /// **'آراء المتواجدين اليوم '**
+  String get reports_today_uers;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

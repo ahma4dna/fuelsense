@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fuelsense/core/application/resource/app_assets.dart';
 import 'package:fuelsense/core/application/resource/app_context.dart';
+import 'package:fuelsense/core/application/resource/app_padding.dart';
 import 'package:fuelsense/core/application/resource/app_size.dart';
 import 'package:fuelsense/core/application/resource/app_styles.dart';
 
@@ -22,12 +23,15 @@ class CustomBottomNavBar extends StatelessWidget {
     final AppContext appContext = AppContext.of(context);
 
     return Padding(
-      padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+      padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
       child: SizedBox(
-        height: 105,
+        height: 65,
         child: Container(
-          height: 88,
-          padding: EdgeInsets.symmetric(horizontal: 5),
+          height: 65,
+          padding: EdgeInsets.symmetric(
+            horizontal: AppPadding.p5,
+            vertical: AppPadding.p5,
+          ),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(38),
@@ -45,8 +49,8 @@ class CustomBottomNavBar extends StatelessWidget {
               Expanded(
                 child: _NavItem(
                   index: 0,
-                  label: appContext.localText.home,
-                  icon: AppAssets.home,
+                  label: appContext.localText.map,
+                  icon: AppAssets.map,
                   currentIndex: currentIndex,
                   onTap: onItemSelected,
                 ),
@@ -55,8 +59,8 @@ class CustomBottomNavBar extends StatelessWidget {
               Expanded(
                 child: _NavItem(
                   index: 1,
-                  label: appContext.localText.staions,
-                  icon: AppAssets.staions,
+                  label: appContext.localText.list_station,
+                  icon: AppAssets.listNote,
                   currentIndex: currentIndex,
                   onTap: onItemSelected,
                 ),
@@ -66,8 +70,8 @@ class CustomBottomNavBar extends StatelessWidget {
               Expanded(
                 child: _NavItem(
                   index: 2,
-                  label: appContext.localText.reports,
-                  icon: AppAssets.reports,
+                  label: appContext.localText.city_radar,
+                  icon: AppAssets.citeyRadar,
                   currentIndex: currentIndex,
                   onTap: onItemSelected,
                 ),
@@ -76,8 +80,8 @@ class CustomBottomNavBar extends StatelessWidget {
               Expanded(
                 child: _NavItem(
                   index: 3,
-                  label: appContext.localText.account,
-                  icon: AppAssets.account,
+                  label: appContext.localText.settinges,
+                  icon: AppAssets.sttinges,
                   currentIndex: currentIndex,
                   onTap: onItemSelected,
                 ),
@@ -128,10 +132,10 @@ class _NavItem extends StatelessWidget {
                 opacity: isActive ? 1.0 : 0.0,
                 duration: const Duration(milliseconds: 250),
                 child: Container(
-                  width: 70,
-                  height: 70,
+                  width: double.infinity,
+                  height: 65,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(22),
+                    borderRadius: BorderRadius.circular(38),
 
                     gradient: LinearGradient(
                       begin: Alignment.topLeft,
@@ -184,9 +188,9 @@ class _NavItem extends StatelessWidget {
                     child: SvgPicture.asset(
                       icon,
                       key: ValueKey(isActive),
-                      colorFilter: ColorFilter.mode(isActive ? Color(0XFF0F766E) : Color(0XFF91A0B9), BlendMode.srcIn),
-                      width: getResponsiveSize(context: context, fontSize: 30),
-                      height: getResponsiveSize(context: context, fontSize: 30),
+                      colorFilter: ColorFilter.mode(isActive ? Color(0XFF0F6E67) : Color(0XFF7B8886), BlendMode.srcIn),
+                      width: AppSize.s24,
+                      height: AppSize.s24,
                     ),
                   ),
                   const SizedBox(height: 4),
@@ -194,10 +198,13 @@ class _NavItem extends StatelessWidget {
                     duration: const Duration(milliseconds: 180),
                     style: AppStyles.getBold(
                       context: context,
-                      color: isActive ? const Color(0xFF0F172A) : const Color(0xFF90A1B8),
-                      fontSize: AppSize.s14,
+                      color: isActive ? Color(0XFF0F6E67) : Color(0XFF7B8886),
+                      fontSize: AppSize.s12,
                     ),
-                    child: Text(label),
+                    child: Text(
+                      label,
+                      maxLines: 1,
+                    ),
                   ),
                 ],
               ),

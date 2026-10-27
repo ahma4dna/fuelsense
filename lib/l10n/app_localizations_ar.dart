@@ -25,7 +25,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get view_detail_st => 'عرض التفاصيل';
 
   @override
-  String get search_lable => 'ابحث عن محطة...';
+  String get search_lable => 'ابحث عن اسم المحطة أو المدينة...';
 
   @override
   String get station_details => 'تفاصيل المحطة';
@@ -140,4 +140,43 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get thank_you => 'شكرآ لمساهمتك';
+
+  @override
+  String get map => 'الخريطة';
+
+  @override
+  String get list_station => 'المحطات';
+
+  @override
+  String get city_radar => 'رادار المدن';
+
+  @override
+  String get settinges => 'الاعدادات';
+
+  @override
+  String get km => 'كم';
+
+  @override
+  String get station_statee => 'حالة المحطة';
+
+  @override
+  String get route_nigber_station => 'الطريق بجانب المحطة';
+
+  @override
+  String get letency => 'تأخير';
+
+  @override
+  String get user_report_station => 'آراء موثقة من المتواجدين اليوم';
+
+  @override
+  String get view_details_and_hitory_station => 'عرض تفاصيل وسجل المحطة';
+
+  @override
+  String get open_route => 'فتح المسار ';
+
+  @override
+  String get history_and_date_station => 'سجل وتاريخ المحطة';
+
+  @override
+  String get reports_today_uers => 'آراء المتواجدين اليوم ';
 }

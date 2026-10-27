@@ -27,6 +27,24 @@ abstract class AppAssets {
   static const String selected = "assets/icons/svg/selected.svg";
   static const String successSendReport = "assets/icons/svg/success_send_report.svg";
 
+  //nav bar
+  static const String map = "assets/icons/svg/nave_bar/map.svg";
+  static const String listNote = "assets/icons/svg/nave_bar/list_note.svg";
+  static const String citeyRadar = "assets/icons/svg/nave_bar/citey_radar.svg";
+  static const String sttinges = "assets/icons/svg/nave_bar/sttinges.svg";
+
+  //marker
+  static const String onTheWay = "assets/icons/svg/markers/on_the_way.svg";
+  static const String open = "assets/icons/svg/markers/open.svg";
+  static const String refilling = "assets/icons/svg/markers/refilling.svg";
+  static const String unknown = "assets/icons/svg/markers/unknown.svg";
+
+  //
+  static const String locationDistance = "assets/icons/svg/location_distance.svg";
+  static const String stateStaion = "assets/icons/svg/state_staion.svg";
+  static const String clock = "assets/icons/svg/clock.svg";
+  static const String doublePeson = "assets/icons/svg/double_peson.svg";
+
   //map style
   static const String mapStyle = "assets/icons/map_style/map_init.json";
 }
