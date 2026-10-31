@@ -10,4 +10,5 @@ final mainRoute = GoRoute(
     );
   },
   path: mainPathe,
+  name: mainPathName,
 );

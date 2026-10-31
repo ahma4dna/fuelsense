@@ -296,4 +296,145 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get login_subtitle => 'سجّل دخولك لمتابعة محطات مدينتك';
+
+  @override
+  String get new_password_title => 'تعيين كلمة مرور جديدة';
+
+  @override
+  String get new_password_subtitle => 'أدخل كلمة المرور الجديدة لحسابك، ثم سجل دخولك للمتابعة.';
+
+  @override
+  String get new_password => 'كلمة المرور الجديدة';
+
+  @override
+  String get confirm_new_password => 'تأكيد كلمة المرور الجديدة';
+
+  @override
+  String get password_mismatch => 'كلمتا المرور غير متطابقتين';
+
+  @override
+  String get save_new_password => 'حفظ كلمة المرور الجديدة';
+
+  @override
+  String get password_updated_success => 'تم تغيير كلمة المرور بنجاح، يمكنك الآن تسجيل الدخول';
+
+  @override
+  String get password_update_error => 'تعذر تحديث كلمة المرور';
+
+  @override
+  String get terms_of_use => 'شروط الاستخدام';
+
+  @override
+  String get fuelsense_terms_agreement => 'اتفاقية استخدام تطبيق FuelSense';
+
+  @override
+  String get terms_section_1_title => 'الهدف من التطبيق ومصادر المعلومات';
+
+  @override
+  String get terms_section_1_content =>
+      'يهدف تطبيق FuelSense إلى تسهيل معرفة حالة محطات الوقود ومستوى الازدحام فيها. يعتمد التطبيق على عرض معلومات عامة متاحة للجميع يتم جمعها من صفحات مواقع التواصل الاجتماعي المختصة بتوزيع الوقود، بالإضافة إلى التحديثات المباشرة التي يدخلها مشرفو النظام (الأدمن) وبلاغات المستخدمين حول حالة الطوابير.';
+
+  @override
+  String get terms_section_2_title => 'شروط إضافة البلاغات والتأكيدات';
+
+  @override
+  String get terms_section_2_content =>
+      'لضمان دقة المعلومات المعروضة للمواطنين:\n• يُشترط لإضافة بلاغ عن حالة الطابور أو تأكيد بلاغ قائم أن تكون متواجداً بالقرب من المحطة ضمن النطاق الجغرافي المسموح (200 متر).\n• يجب أن يعكس البلاغ الحالة الفعلية لحركة الطابور (خفيف، متوسط، مزدحم، أو متوقف).\n• الملاحظات النصية المرفقة بالبلاغ يجب ألا تتجاوز 120 حرفاً، وأن تقتصر على وصف حالة المحطة دون أي إساءة أو تضليل.';
+
+  @override
+  String get terms_section_3_title => 'إدارة البيانات وتحديثات الأدمن';
+
+  @override
+  String get terms_section_3_content =>
+      'يقوم مشرفو التطبيق (الأدمن) بمتابعة وتحديث حالات المحطات استناداً إلى المنشورات العامة في مواقع التواصل الاجتماعي والبيانات المتوفرة، وللإدارة كامل الصلاحية في تعديل حالة أي محطة أو تثبيتها لضمان وصول المعلومة الصحيحة للمستخدمين.';
+
+  @override
+  String get terms_section_4_title => 'سياسة مكافحة التلاعب وحظر الحسابات';
+
+  @override
+  String get terms_section_4_content =>
+      'في حال ثبوت تعمد المستخدم إرسال بلاغات كاذبة، أو تكرار التبليغ غير الصحيح، أو استخدام أدوات تغيير الموقع الجغرافي الوهمي (Fake GPS)، يحق لإدارة التطبيق إيقاف الحساب مؤقتاً أو حظره نهائياً للحفاظ على موثوقية الخدمة.';
+
+  @override
+  String get terms_section_5_title => 'إخلاء المسؤولية';
+
+  @override
+  String get terms_section_5_content =>
+      'جميع البيانات المعروضة في التطبيق هي معلومات عامة واسترشادية مستندة إلى ما يُنشر في منصات التواصل الاجتماعي وتحديثات الإدارة وبلاغات المستخدمين، وقد تتغير حالة المحطة أو ينفد الوقود في أي لحظة دون أن يتحمل التطبيق أي مسؤولية قانونية أو مادية عن ذلك.';
+
+  @override
+  String get privacy_policy => 'سياسة الخصوصية';
+
+  @override
+  String get privacy_header_title => 'حماية بياناتك وخصوصيتك في FuelSense';
+
+  @override
+  String get privacy_header_subtitle => 'نلتزم بحماية بياناتك وعدم مشاركتها مع أي طرف ثالث';
+
+  @override
+  String get privacy_section_1_title => '1. بيانات الحساب الأساسية';
+
+  @override
+  String get privacy_section_1_description =>
+      'عند إنشائك لحساب جديد أو تسجيل الدخول عبر Google، نقوم بحفظ اسمك الكامل، بريدك الإلكتروني، والصورة الرمزية (إن وجدت) لإدارة ملفك الشخصي وحفظ قائمة المحطات المفضلة وسجل مساهماتك.';
+
+  @override
+  String get privacy_section_2_title => '2. بيانات الموقع الجغرافي (GPS)';
+
+  @override
+  String get privacy_section_2_description =>
+      'يستخدم التطبيق إحداثيات موقعك الجغرافي لغرضين أساسيين فقط:\n• عرض محطات الوقود القريبة منك على الخريطة وحساب المسافة إليها.\n• التحقق اللحظي من تواجدك ضمن نطاق المحطة (200 متر) عند إرسال بلاغ عن الطابور أو تأكيد بلاغ مستخدم آخر.\nلا يقوم التطبيق بتتبع موقعك في الخلفية عند إغلاقه.';
+
+  @override
+  String get privacy_section_3_title => '3. طبيعة المعلومات ومصادرها العامة';
+
+  @override
+  String get privacy_section_3_description =>
+      'تعتمد بيانات حالة المحطات وتوفر الوقود في التطبيق على معلومات عامة منشورة في صفحات مواقع التواصل الاجتماعي، أو بيانات يتم إدخالها وتحديثها بواسطة إدارة التطبيق (الأدمن). أما البلاغات التي يرسلها المستخدم فتُعرض بشكل عام لإفادة باقي المستخدمين بحالة الطابور دون كشف بيانات التواصل الخاصة به.';
+
+  @override
+  String get privacy_section_4_title => '4. رموز الإشعارات والتنبيهات';
+
+  @override
+  String get privacy_section_4_description =>
+      'نحتفظ بمعرف الإشعارات الخاص بجهازك (FCM Token) وتفضيلاتك لإرسال تنبيهات فورية عند تحديث حالة محطاتك المفضلة أو توفر الوقود في مدينتك بناءً على المنشورات العامة أو تحديثات الأدمن، ويمكنك إيقاف هذه التنبيهات في أي وقت.';
+
+  @override
+  String get privacy_section_5_title => '5. أمن البيانات وحذف الحساب';
+
+  @override
+  String get privacy_section_5_description =>
+      'تُخزن جميع البيانات على خوادم مشفرة ومحمية بسياسات أمان صارمة على مستوى الصفوف (Row Level Security). يمكنك في أي وقت طلب تعديل بياناتك الشخصية أو حذف حسابك بالكامل.';
+
+  @override
+  String get invalid_email_format => 'صيغة البريد الإلكتروني غير صحيحة';
+
+  @override
+  String get reset_link_send_error => 'تعذر إرسال رابط الاستعادة';
+
+  @override
+  String get forgot_password_title => 'استعادة كلمة المرور';
+
+  @override
+  String get forgot_password_subtitle =>
+      'أدخل بريدك الإلكتروني المسجل وسنرسل لك رابطاً آمناً لإعادة تعيين كلمة المرور الخاصة بك.';
+
+  @override
+  String get send_reset_link => 'إرسال رابط الاستعادة';
+
+  @override
+  String get check_your_email => 'تحقق من بريدك الإلكتروني';
+
+  @override
+  String get reset_link_sent_to => 'لقد أرسلنا رابط إعادة تعيين كلمة المرور إلى البريد الإلكتروني:';
+
+  @override
+  String get reset_link_instructions =>
+      'يرجى فتح بريدك الإلكتروني والضغط على الرابط المرسل، وسيقوم الرابط بإعادتك تلقائياً إلى التطبيق لتعيين كلمة المرور الجديدة.';
+
+  @override
+  String get resend_reset_link => 'إعادة إرسال الرابط';
+
+  @override
+  String get edit_email => 'تعديل البريد الإلكتروني';
 }

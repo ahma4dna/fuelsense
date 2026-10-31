@@ -5,6 +5,7 @@ import 'package:fuelsense/features/auth/domain/enums/auth_enums.dart';
 import 'package:fuelsense/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:fuelsense/features/auth/routes/reports_path.dart';
 import 'package:fuelsense/features/auth/routes/reports_route.dart';
+import 'package:fuelsense/features/splash/routes/splash_route.dart';
 import 'package:fuelsense/features/stations/presentation/routes/home_route.dart';
 import 'package:fuelsense/features/main/routes/main_route.dart';
 import 'package:fuelsense/features/reports/routes/reports_route.dart';
@@ -24,5 +25,8 @@ final GoRouter router = GoRouter(
     mainRoute,
     changePasswordRoute,
     forgotPasswordRoute,
+    splashRoute,
+    termsOfUseRoute,
+    privacyPolicyRoute,
   ],
 );

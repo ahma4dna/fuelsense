@@ -660,6 +660,264 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'سجّل دخولك لمتابعة محطات مدينتك'**
   String get login_subtitle;
+
+  /// No description provided for @new_password_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعيين كلمة مرور جديدة'**
+  String get new_password_title;
+
+  /// No description provided for @new_password_subtitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'أدخل كلمة المرور الجديدة لحسابك، ثم سجل دخولك للمتابعة.'**
+  String get new_password_subtitle;
+
+  /// No description provided for @new_password.
+  ///
+  /// In ar, this message translates to:
+  /// **'كلمة المرور الجديدة'**
+  String get new_password;
+
+  /// No description provided for @confirm_new_password.
+  ///
+  /// In ar, this message translates to:
+  /// **'تأكيد كلمة المرور الجديدة'**
+  String get confirm_new_password;
+
+  /// No description provided for @password_mismatch.
+  ///
+  /// In ar, this message translates to:
+  /// **'كلمتا المرور غير متطابقتين'**
+  String get password_mismatch;
+
+  /// No description provided for @save_new_password.
+  ///
+  /// In ar, this message translates to:
+  /// **'حفظ كلمة المرور الجديدة'**
+  String get save_new_password;
+
+  /// No description provided for @password_updated_success.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم تغيير كلمة المرور بنجاح، يمكنك الآن تسجيل الدخول'**
+  String get password_updated_success;
+
+  /// No description provided for @password_update_error.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذر تحديث كلمة المرور'**
+  String get password_update_error;
+
+  /// No description provided for @terms_of_use.
+  ///
+  /// In ar, this message translates to:
+  /// **'شروط الاستخدام'**
+  String get terms_of_use;
+
+  /// No description provided for @fuelsense_terms_agreement.
+  ///
+  /// In ar, this message translates to:
+  /// **'اتفاقية استخدام تطبيق FuelSense'**
+  String get fuelsense_terms_agreement;
+
+  /// No description provided for @terms_section_1_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'الهدف من التطبيق ومصادر المعلومات'**
+  String get terms_section_1_title;
+
+  /// No description provided for @terms_section_1_content.
+  ///
+  /// In ar, this message translates to:
+  /// **'يهدف تطبيق FuelSense إلى تسهيل معرفة حالة محطات الوقود ومستوى الازدحام فيها. يعتمد التطبيق على عرض معلومات عامة متاحة للجميع يتم جمعها من صفحات مواقع التواصل الاجتماعي المختصة بتوزيع الوقود، بالإضافة إلى التحديثات المباشرة التي يدخلها مشرفو النظام (الأدمن) وبلاغات المستخدمين حول حالة الطوابير.'**
+  String get terms_section_1_content;
+
+  /// No description provided for @terms_section_2_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'شروط إضافة البلاغات والتأكيدات'**
+  String get terms_section_2_title;
+
+  /// No description provided for @terms_section_2_content.
+  ///
+  /// In ar, this message translates to:
+  /// **'لضمان دقة المعلومات المعروضة للمواطنين:\n• يُشترط لإضافة بلاغ عن حالة الطابور أو تأكيد بلاغ قائم أن تكون متواجداً بالقرب من المحطة ضمن النطاق الجغرافي المسموح (200 متر).\n• يجب أن يعكس البلاغ الحالة الفعلية لحركة الطابور (خفيف، متوسط، مزدحم، أو متوقف).\n• الملاحظات النصية المرفقة بالبلاغ يجب ألا تتجاوز 120 حرفاً، وأن تقتصر على وصف حالة المحطة دون أي إساءة أو تضليل.'**
+  String get terms_section_2_content;
+
+  /// No description provided for @terms_section_3_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'إدارة البيانات وتحديثات الأدمن'**
+  String get terms_section_3_title;
+
+  /// No description provided for @terms_section_3_content.
+  ///
+  /// In ar, this message translates to:
+  /// **'يقوم مشرفو التطبيق (الأدمن) بمتابعة وتحديث حالات المحطات استناداً إلى المنشورات العامة في مواقع التواصل الاجتماعي والبيانات المتوفرة، وللإدارة كامل الصلاحية في تعديل حالة أي محطة أو تثبيتها لضمان وصول المعلومة الصحيحة للمستخدمين.'**
+  String get terms_section_3_content;
+
+  /// No description provided for @terms_section_4_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'سياسة مكافحة التلاعب وحظر الحسابات'**
+  String get terms_section_4_title;
+
+  /// No description provided for @terms_section_4_content.
+  ///
+  /// In ar, this message translates to:
+  /// **'في حال ثبوت تعمد المستخدم إرسال بلاغات كاذبة، أو تكرار التبليغ غير الصحيح، أو استخدام أدوات تغيير الموقع الجغرافي الوهمي (Fake GPS)، يحق لإدارة التطبيق إيقاف الحساب مؤقتاً أو حظره نهائياً للحفاظ على موثوقية الخدمة.'**
+  String get terms_section_4_content;
+
+  /// No description provided for @terms_section_5_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'إخلاء المسؤولية'**
+  String get terms_section_5_title;
+
+  /// No description provided for @terms_section_5_content.
+  ///
+  /// In ar, this message translates to:
+  /// **'جميع البيانات المعروضة في التطبيق هي معلومات عامة واسترشادية مستندة إلى ما يُنشر في منصات التواصل الاجتماعي وتحديثات الإدارة وبلاغات المستخدمين، وقد تتغير حالة المحطة أو ينفد الوقود في أي لحظة دون أن يتحمل التطبيق أي مسؤولية قانونية أو مادية عن ذلك.'**
+  String get terms_section_5_content;
+
+  /// No description provided for @privacy_policy.
+  ///
+  /// In ar, this message translates to:
+  /// **'سياسة الخصوصية'**
+  String get privacy_policy;
+
+  /// No description provided for @privacy_header_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'حماية بياناتك وخصوصيتك في FuelSense'**
+  String get privacy_header_title;
+
+  /// No description provided for @privacy_header_subtitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'نلتزم بحماية بياناتك وعدم مشاركتها مع أي طرف ثالث'**
+  String get privacy_header_subtitle;
+
+  /// No description provided for @privacy_section_1_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'1. بيانات الحساب الأساسية'**
+  String get privacy_section_1_title;
+
+  /// No description provided for @privacy_section_1_description.
+  ///
+  /// In ar, this message translates to:
+  /// **'عند إنشائك لحساب جديد أو تسجيل الدخول عبر Google، نقوم بحفظ اسمك الكامل، بريدك الإلكتروني، والصورة الرمزية (إن وجدت) لإدارة ملفك الشخصي وحفظ قائمة المحطات المفضلة وسجل مساهماتك.'**
+  String get privacy_section_1_description;
+
+  /// No description provided for @privacy_section_2_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'2. بيانات الموقع الجغرافي (GPS)'**
+  String get privacy_section_2_title;
+
+  /// No description provided for @privacy_section_2_description.
+  ///
+  /// In ar, this message translates to:
+  /// **'يستخدم التطبيق إحداثيات موقعك الجغرافي لغرضين أساسيين فقط:\n• عرض محطات الوقود القريبة منك على الخريطة وحساب المسافة إليها.\n• التحقق اللحظي من تواجدك ضمن نطاق المحطة (200 متر) عند إرسال بلاغ عن الطابور أو تأكيد بلاغ مستخدم آخر.\nلا يقوم التطبيق بتتبع موقعك في الخلفية عند إغلاقه.'**
+  String get privacy_section_2_description;
+
+  /// No description provided for @privacy_section_3_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'3. طبيعة المعلومات ومصادرها العامة'**
+  String get privacy_section_3_title;
+
+  /// No description provided for @privacy_section_3_description.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعتمد بيانات حالة المحطات وتوفر الوقود في التطبيق على معلومات عامة منشورة في صفحات مواقع التواصل الاجتماعي، أو بيانات يتم إدخالها وتحديثها بواسطة إدارة التطبيق (الأدمن). أما البلاغات التي يرسلها المستخدم فتُعرض بشكل عام لإفادة باقي المستخدمين بحالة الطابور دون كشف بيانات التواصل الخاصة به.'**
+  String get privacy_section_3_description;
+
+  /// No description provided for @privacy_section_4_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'4. رموز الإشعارات والتنبيهات'**
+  String get privacy_section_4_title;
+
+  /// No description provided for @privacy_section_4_description.
+  ///
+  /// In ar, this message translates to:
+  /// **'نحتفظ بمعرف الإشعارات الخاص بجهازك (FCM Token) وتفضيلاتك لإرسال تنبيهات فورية عند تحديث حالة محطاتك المفضلة أو توفر الوقود في مدينتك بناءً على المنشورات العامة أو تحديثات الأدمن، ويمكنك إيقاف هذه التنبيهات في أي وقت.'**
+  String get privacy_section_4_description;
+
+  /// No description provided for @privacy_section_5_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'5. أمن البيانات وحذف الحساب'**
+  String get privacy_section_5_title;
+
+  /// No description provided for @privacy_section_5_description.
+  ///
+  /// In ar, this message translates to:
+  /// **'تُخزن جميع البيانات على خوادم مشفرة ومحمية بسياسات أمان صارمة على مستوى الصفوف (Row Level Security). يمكنك في أي وقت طلب تعديل بياناتك الشخصية أو حذف حسابك بالكامل.'**
+  String get privacy_section_5_description;
+
+  /// No description provided for @invalid_email_format.
+  ///
+  /// In ar, this message translates to:
+  /// **'صيغة البريد الإلكتروني غير صحيحة'**
+  String get invalid_email_format;
+
+  /// No description provided for @reset_link_send_error.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذر إرسال رابط الاستعادة'**
+  String get reset_link_send_error;
+
+  /// No description provided for @forgot_password_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'استعادة كلمة المرور'**
+  String get forgot_password_title;
+
+  /// No description provided for @forgot_password_subtitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'أدخل بريدك الإلكتروني المسجل وسنرسل لك رابطاً آمناً لإعادة تعيين كلمة المرور الخاصة بك.'**
+  String get forgot_password_subtitle;
+
+  /// No description provided for @send_reset_link.
+  ///
+  /// In ar, this message translates to:
+  /// **'إرسال رابط الاستعادة'**
+  String get send_reset_link;
+
+  /// No description provided for @check_your_email.
+  ///
+  /// In ar, this message translates to:
+  /// **'تحقق من بريدك الإلكتروني'**
+  String get check_your_email;
+
+  /// No description provided for @reset_link_sent_to.
+  ///
+  /// In ar, this message translates to:
+  /// **'لقد أرسلنا رابط إعادة تعيين كلمة المرور إلى البريد الإلكتروني:'**
+  String get reset_link_sent_to;
+
+  /// No description provided for @reset_link_instructions.
+  ///
+  /// In ar, this message translates to:
+  /// **'يرجى فتح بريدك الإلكتروني والضغط على الرابط المرسل، وسيقوم الرابط بإعادتك تلقائياً إلى التطبيق لتعيين كلمة المرور الجديدة.'**
+  String get reset_link_instructions;
+
+  /// No description provided for @resend_reset_link.
+  ///
+  /// In ar, this message translates to:
+  /// **'إعادة إرسال الرابط'**
+  String get resend_reset_link;
+
+  /// No description provided for @edit_email.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعديل البريد الإلكتروني'**
+  String get edit_email;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

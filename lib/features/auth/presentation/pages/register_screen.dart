@@ -10,6 +10,9 @@ import 'package:fuelsense/features/auth/presentation/widgets/rigester/auth_or_di
 import 'package:fuelsense/features/auth/presentation/widgets/auth_text_field.dart';
 import 'package:fuelsense/features/auth/presentation/widgets/google_auth_button.dart';
 import 'package:fuelsense/features/auth/presentation/widgets/rigester/password_strength_meter.dart';
+import 'package:fuelsense/features/auth/routes/reports_path.dart';
+import 'package:fuelsense/features/staionssjs/routes/stations_path.dart';
+import 'package:fuelsense/features/stations/presentation/routes/home_path.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 
@@ -145,7 +148,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       child: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
           if (state.status == AuthStatus.authenticated) {
-            widget.onRegisterSuccess?.call();
+            context.goNamed(homeName);
           } else if (state.status == AuthStatus.error) {
             Flushbar(
               message: appContext.localText.error_crate_account,
@@ -208,9 +211,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       label: appContext.localText.sin_up_google,
                       onTap: isLoading
                           ? null
-                          : () => getIt<AuthBloc>().add(
-                              SignInWithGoogleEvent(),
-                            ),
+                          : () {
+                              if (!_acceptedTerms) {
+                                Flushbar(
+                                  message: appContext.localText.accepted_terms,
+                                  backgroundColor: const Color(0xFFD92D20),
+                                  flushbarPosition: FlushbarPosition.TOP,
+                                  duration: const Duration(seconds: 3),
+                                ).show(context);
+                                return;
+                              }
+                              getIt<AuthBloc>().add(
+                                SignInWithGoogleEvent(),
+                              );
+                            },
                     ),
                     const Gap(AppSize.s20),
 
@@ -335,32 +349,45 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 _acceptedTerms = !_acceptedTerms;
                               });
                             },
-                            child: RichText(
-                              text: TextSpan(
-                                style: AppStyles.getMeduim(
-                                  context: context,
-                                  fontSize: AppSize.s13,
-                                  color: Color(0xFF4A5957),
+                            child: Row(
+                              children: [
+                                Text(
+                                  "${appContext.localText.accept} ",
+                                  style: AppStyles.getMeduim(
+                                    context: context,
+                                    fontSize: AppSize.s13,
+                                    color: Color(0xFF4A5957),
+                                  ),
                                 ),
-                                children: [
-                                  TextSpan(text: "${appContext.localText.accept} "),
-                                  TextSpan(
-                                    text: "${appContext.localText.terms} ",
+                                InkWell(
+                                  onTap: () => context.pushNamed(termsOfUseName),
+                                  child: Text(
+                                    "${appContext.localText.terms} ",
                                     style: TextStyle(
                                       color: Color(0xFF0F6E67),
                                       fontWeight: FontWeight.w700,
                                     ),
                                   ),
-                                  TextSpan(text: "${appContext.localText.and} "),
-                                  TextSpan(
-                                    text: appContext.localText.privcy,
+                                ),
+                                Text(
+                                  "${appContext.localText.and} ",
+                                  style: AppStyles.getMeduim(
+                                    context: context,
+                                    fontSize: AppSize.s13,
+                                    color: Color(0xFF4A5957),
+                                  ),
+                                ),
+                                InkWell(
+                                  onTap: () => context.pushNamed(privacyPolicyName),
+                                  child: Text(
+                                    appContext.localText.privcy,
                                     style: TextStyle(
                                       color: Color(0xFF0F6E67),
                                       fontWeight: FontWeight.w700,
                                     ),
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
                         ),

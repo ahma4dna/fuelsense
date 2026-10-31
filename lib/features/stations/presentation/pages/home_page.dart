@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
   Set<Marker> _markers = {};
   final Map<String, BitmapDescriptor> _markerIcons = {};
   StationEntity? _selectedStation;
-  int _dismissKeyCounter = 0; // يمنع تدمير الأنيميشن عند اختيار محطة
+  int _dismissKeyCounter = 0;
   String? mapStyle;
   bool _isGettingLocation = false;
   double _currentZoom = 15.0;
