@@ -11,6 +11,7 @@ import 'package:fuelsense/features/auth/presentation/widgets/google_auth_button.
 import 'package:fuelsense/features/auth/presentation/widgets/login/login_radar_header.dart';
 import 'package:fuelsense/features/auth/presentation/widgets/rigester/auth_or_divider.dart';
 import 'package:fuelsense/features/auth/routes/reports_path.dart';
+import 'package:fuelsense/features/main/routes/main_pathe.dart';
 import 'package:fuelsense/features/staionssjs/routes/stations_path.dart';
 import 'package:fuelsense/features/stations/presentation/routes/home_path.dart';
 import 'package:gap/gap.dart';
@@ -88,7 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
             context.pushReplacementNamed(changePaswordName);
           }
           if (state.status == AuthStatus.authenticated) {
-            context.goNamed(homeName);
+            context.goNamed(mainPathName);
           } else if (state.status == AuthStatus.passwordResetSent) {
             Flushbar(
               message: appContext.localText.password_reset_sent,

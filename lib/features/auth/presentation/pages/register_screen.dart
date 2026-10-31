@@ -11,6 +11,7 @@ import 'package:fuelsense/features/auth/presentation/widgets/auth_text_field.dar
 import 'package:fuelsense/features/auth/presentation/widgets/google_auth_button.dart';
 import 'package:fuelsense/features/auth/presentation/widgets/rigester/password_strength_meter.dart';
 import 'package:fuelsense/features/auth/routes/reports_path.dart';
+import 'package:fuelsense/features/main/routes/main_pathe.dart';
 import 'package:fuelsense/features/staionssjs/routes/stations_path.dart';
 import 'package:fuelsense/features/stations/presentation/routes/home_path.dart';
 import 'package:gap/gap.dart';
@@ -148,7 +149,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       child: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
           if (state.status == AuthStatus.authenticated) {
-            context.goNamed(homeName);
+            context.goNamed(mainPathName);
           } else if (state.status == AuthStatus.error) {
             Flushbar(
               message: appContext.localText.error_crate_account,
