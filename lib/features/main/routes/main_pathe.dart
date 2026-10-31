@@ -1,1 +1,1 @@
-const String mainPathe = "/";
+const String mainPathe = "/main";

@@ -17,6 +17,10 @@ class ErrorHandling implements Exception {
     } else if (error is AuthApiException) {
       failure = authException(error);
       log(error.toString());
+    } else if (error is AuthException) {
+      failure = authException(error);
+
+      log(error.toString());
     } else {
       log(error.toString());
       failure = DataSource.defaultError.getFailure();

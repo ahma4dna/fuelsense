@@ -4,7 +4,10 @@ part 'field_report_model.g.dart';
 
 @JsonSerializable()
 class FieldReportModel {
+  @JsonKey(name: 'id')
   final int? id;
+  @JsonKey(name: 'name_user')
+  final String? nameUser;
   @JsonKey(name: 'user_id')
   final String? userId;
   @JsonKey(name: 'station_id')
@@ -37,6 +40,7 @@ class FieldReportModel {
 
   const FieldReportModel({
     this.id,
+    this.nameUser,
     this.userId,
     this.stationId,
     this.historyId,

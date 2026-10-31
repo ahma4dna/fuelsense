@@ -5,6 +5,7 @@ import '../extensions/station_extensions.dart';
 
 class FieldReportEntity extends Equatable {
   final int id;
+  final String nameUer;
   final String userId;
   final int stationId;
   final int? historyId;
@@ -38,6 +39,7 @@ class FieldReportEntity extends Equatable {
     required this.confirmationsCount,
     required this.lastConfirmedAt,
     required this.createdAt,
+    required this.nameUer,
   });
 
   String get verificationBadgeText {
@@ -64,6 +66,7 @@ class FieldReportEntity extends Equatable {
   }) {
     return FieldReportEntity(
       id: id,
+      nameUer: nameUer,
       userId: userId,
       stationId: stationId,
       historyId: historyId,

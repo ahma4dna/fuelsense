@@ -426,6 +426,240 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'آراء المتواجدين اليوم '**
   String get reports_today_uers;
+
+  /// No description provided for @reports_today_uers_hint.
+  ///
+  /// In ar, this message translates to:
+  /// **'آراء المستخدمين تعكس مشاهدات اليوم من موقع المحطة ولا\nتغير الحالة أعلاه.'**
+  String get reports_today_uers_hint;
+
+  /// No description provided for @submit_report_user.
+  ///
+  /// In ar, this message translates to:
+  /// **' أؤكد هذا الوضع الآن'**
+  String get submit_report_user;
+
+  /// No description provided for @history_this_station_not_avialeble.
+  ///
+  /// In ar, this message translates to:
+  /// **'سجل هذه المحطة غير متوفر'**
+  String get history_this_station_not_avialeble;
+
+  /// No description provided for @not_report.
+  ///
+  /// In ar, this message translates to:
+  /// **'لايوجد ارأ بعد'**
+  String get not_report;
+
+  /// No description provided for @name_error.
+  ///
+  /// In ar, this message translates to:
+  /// **' يرجى إدخال الاسم الكامل'**
+  String get name_error;
+
+  /// No description provided for @email_error.
+  ///
+  /// In ar, this message translates to:
+  /// **' صيغة البريد الإلكتروني غير صحيحة'**
+  String get email_error;
+
+  /// No description provided for @password_error.
+  ///
+  /// In ar, this message translates to:
+  /// **'كلمة المرور يجب أن تكون 8 أحرف على الأقل وتحتوي رقماً'**
+  String get password_error;
+
+  /// No description provided for @accepted_terms.
+  ///
+  /// In ar, this message translates to:
+  /// **'يرجى الموافقة على شروط الاستخدام وسياسة الخصوصية للمتابعة'**
+  String get accepted_terms;
+
+  /// No description provided for @error_crate_account.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذر إنشاء الحساب'**
+  String get error_crate_account;
+
+  /// No description provided for @create_new_account.
+  ///
+  /// In ar, this message translates to:
+  /// **'إنشاء حساب جديد'**
+  String get create_new_account;
+
+  /// No description provided for @create_new_account_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'انضم للمتواجدين وساهم في توثيق حالة المحطات'**
+  String get create_new_account_title;
+
+  /// No description provided for @sin_up_google.
+  ///
+  /// In ar, this message translates to:
+  /// **'التسجيل عبر جوجل'**
+  String get sin_up_google;
+
+  /// No description provided for @or_sin_up_email.
+  ///
+  /// In ar, this message translates to:
+  /// **'أو أنشئ حساباً بالبريد الإلكتروني'**
+  String get or_sin_up_email;
+
+  /// No description provided for @full_name.
+  ///
+  /// In ar, this message translates to:
+  /// **'الاسم الكامل'**
+  String get full_name;
+
+  /// No description provided for @week.
+  ///
+  /// In ar, this message translates to:
+  /// **'ضعيفة'**
+  String get week;
+
+  /// No description provided for @medium.
+  ///
+  /// In ar, this message translates to:
+  /// **'متوسطة'**
+  String get medium;
+
+  /// No description provided for @strong.
+  ///
+  /// In ar, this message translates to:
+  /// **'قوية'**
+  String get strong;
+
+  /// No description provided for @strong_pasword.
+  ///
+  /// In ar, this message translates to:
+  /// **'قوة كلمة المرور'**
+  String get strong_pasword;
+
+  /// No description provided for @warrning_password.
+  ///
+  /// In ar, this message translates to:
+  /// **'ثمانية أحرف على الأقل، وتحتوي رقماً'**
+  String get warrning_password;
+
+  /// No description provided for @email.
+  ///
+  /// In ar, this message translates to:
+  /// **'البريد الإلكتروني'**
+  String get email;
+
+  /// No description provided for @password.
+  ///
+  /// In ar, this message translates to:
+  /// **'كلمة المرور'**
+  String get password;
+
+  /// No description provided for @accept.
+  ///
+  /// In ar, this message translates to:
+  /// **'أوافق على'**
+  String get accept;
+
+  /// No description provided for @and.
+  ///
+  /// In ar, this message translates to:
+  /// **'و'**
+  String get and;
+
+  /// No description provided for @privcy.
+  ///
+  /// In ar, this message translates to:
+  /// **'سياسة الخصوصية'**
+  String get privcy;
+
+  /// No description provided for @terms.
+  ///
+  /// In ar, this message translates to:
+  /// **'شروط الاستخدام'**
+  String get terms;
+
+  /// No description provided for @create_account.
+  ///
+  /// In ar, this message translates to:
+  /// **'إنشاء الحساب'**
+  String get create_account;
+
+  /// No description provided for @you_have_account.
+  ///
+  /// In ar, this message translates to:
+  /// **'لديك حساب بالفعل؟ '**
+  String get you_have_account;
+
+  /// No description provided for @sign_in.
+  ///
+  /// In ar, this message translates to:
+  /// **'سجّل الدخول'**
+  String get sign_in;
+
+  /// No description provided for @email_hint.
+  ///
+  /// In ar, this message translates to:
+  /// **'اكتب بريدك الإلكتروني'**
+  String get email_hint;
+
+  /// No description provided for @forgot_password.
+  ///
+  /// In ar, this message translates to:
+  /// **'نسيت كلمة المرور؟'**
+  String get forgot_password;
+
+  /// No description provided for @enter_email_for_reset.
+  ///
+  /// In ar, this message translates to:
+  /// **'يرجى كتابة بريدك الإلكتروني أولاً في الحقل المخصص لإرسال رابط الاستعادة'**
+  String get enter_email_for_reset;
+
+  /// No description provided for @password_reset_sent.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم إرسال رابط استعادة كلمة المرور إلى بريدك الإلكتروني'**
+  String get password_reset_sent;
+
+  /// No description provided for @login_error.
+  ///
+  /// In ar, this message translates to:
+  /// **'حدث خطأ أثناء تسجيل الدخول'**
+  String get login_error;
+
+  /// No description provided for @login.
+  ///
+  /// In ar, this message translates to:
+  /// **'تسجيل الدخول'**
+  String get login;
+
+  /// No description provided for @or.
+  ///
+  /// In ar, this message translates to:
+  /// **'أو'**
+  String get or;
+
+  /// No description provided for @continue_with_google.
+  ///
+  /// In ar, this message translates to:
+  /// **'المتابعة عبر جوجل'**
+  String get continue_with_google;
+
+  /// No description provided for @no_account.
+  ///
+  /// In ar, this message translates to:
+  /// **'ليس لديك حساب؟ '**
+  String get no_account;
+
+  /// No description provided for @welcome_back.
+  ///
+  /// In ar, this message translates to:
+  /// **'مرحباً بعودتك'**
+  String get welcome_back;
+
+  /// No description provided for @login_subtitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'سجّل دخولك لمتابعة محطات مدينتك'**
+  String get login_subtitle;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

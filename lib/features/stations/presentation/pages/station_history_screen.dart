@@ -1,350 +1,126 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:fuelsense/core/application/resource/app_assets.dart';
-import 'package:fuelsense/core/application/resource/app_colors.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fuelsense/core/application/resource/app_context.dart';
 import 'package:fuelsense/core/application/resource/app_padding.dart';
 import 'package:fuelsense/core/application/resource/app_size.dart';
-import 'package:fuelsense/core/application/resource/app_styles.dart';
+import 'package:fuelsense/di/injection.dart';
 import 'package:fuelsense/features/stations/domain/entities/station_entity.dart';
-import 'package:fuelsense/features/stations/domain/extensions/station_extensions.dart';
+import 'package:fuelsense/features/stations/presentation/bloc/stations_bloc.dart';
+import 'package:fuelsense/features/stations/presentation/bloc/stations_event.dart';
+import 'package:fuelsense/features/stations/presentation/bloc/stations_state.dart';
+import 'package:fuelsense/features/stations/presentation/widgets/station_details_widget/header_sation_history.dart';
+import 'package:fuelsense/features/stations/presentation/widgets/station_details_widget/list_report_today.dart';
+import 'package:fuelsense/features/stations/presentation/widgets/station_details_widget/station_history_state_widget.dart';
+import 'package:fuelsense/features/stations/presentation/widgets/station_details_widget/station_history_tific_route.dart';
+import 'package:fuelsense/features/stations/presentation/widgets/station_details_widget/station_time_line_list_widget.dart';
+import 'package:fuelsense/features/stations/presentation/widgets/station_details_widget/tab_bar_station_history_widget.dart';
 import 'package:gap/gap.dart';
 
-class StationHistoryScreen extends StatelessWidget {
+class StationHistoryScreen extends StatefulWidget {
   final StationEntity stationEntity;
   const StationHistoryScreen({super.key, required this.stationEntity});
+
+  @override
+  State<StationHistoryScreen> createState() => _StationHistoryScreenState();
+}
+
+class _StationHistoryScreenState extends State<StationHistoryScreen> {
+  int selectIndexTab = 0;
 
   @override
   Widget build(BuildContext context) {
     final appContext = AppContext.of(context);
 
-    return Scaffold(
-      body: Column(
-        children: [
-          SafeArea(
-            bottom: false,
-            child: HeaderSationHistory(
-              stationEntity: stationEntity,
-            ),
-          ),
-          const Gap(AppSize.s12),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: AppPadding.p20,
-            ),
-            child: StationHistoryStateWidget(
-              appContext: appContext,
-              stationEntity: stationEntity,
-            ),
-          ),
-          const Gap(AppSize.s12),
-          StationHistoryTificRoute(
-            appContext: appContext,
-            stationEntity: stationEntity,
-          ),
-          const Gap(AppSize.s16),
-          Container(
-            height: AppSize.s52,
-            padding: const EdgeInsets.all(4),
-            margin: const EdgeInsets.symmetric(
-              horizontal: AppPadding.p20,
-            ),
-            decoration: ShapeDecoration(
-              color: const Color(0x99E6E1D8),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
+    return BlocProvider.value(
+      value: getIt<StationsBloc>(),
+      child: BlocBuilder<StationsBloc, StationsState>(
+        builder: (context, state) {
+          final StationEntity currentStation =
+              (state.selectedStation?.id == widget.stationEntity.id && state.selectedStation != null)
+              ? state.selectedStation!
+              : widget.stationEntity;
 
-class StationHistoryTificRoute extends StatelessWidget {
-  const new({
-    super.key,
-    required this.appContext,
-    required this.stationEntity,
-  });
-
-  final AppContext appContext;
-  final StationEntity stationEntity;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(
-        horizontal: AppPadding.p20,
-      ),
-      padding: const EdgeInsets.symmetric(
-        horizontal: AppPadding.p12,
-        vertical: AppPadding.p8,
-      ),
-      decoration: BoxDecoration(
-        color: const Color(0xFFFAF9F6),
-        borderRadius: BorderRadius.circular(AppSize.s14),
-        border: Border.all(
-          width: 1,
-          color: AppColors.border,
-        ),
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            child: Row(
+          return Scaffold(
+            body: Column(
               children: [
-                Text(
-                  appContext.localText.route_nigber_station,
-                  textAlign: TextAlign.right,
-                  maxLines: 2,
-                  style: AppStyles.getBold(
-                    context: context,
-                    color: const Color(0xFF4A5957),
-                    fontSize: AppSize.s12,
+                SafeArea(
+                  bottom: false,
+                  child: HeaderSationHistory(
+                    stationEntity: currentStation,
                   ),
                 ),
-                const Gap(AppSize.s5),
+                const Gap(AppSize.s12),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppPadding.p20,
+                  ),
+                  child: StationHistoryStateWidget(
+                    appContext: appContext,
+                    stationEntity: currentStation,
+                  ),
+                ),
+                const Gap(AppSize.s12),
+                StationHistoryTificRoute(
+                  appContext: appContext,
+                  stationEntity: currentStation,
+                ),
+                const Gap(AppSize.s16),
+                TabBarStationHistoryWidget(
+                  selectIndexTab: selectIndexTab,
+                  todayReportsCount: state.todayReports.length,
+                  onTapHitoryAndDate: () {
+                    setState(() {
+                      selectIndexTab = 1;
+                    });
+                  },
+                  onTapTodayReportSelect: () {
+                    setState(() {
+                      selectIndexTab = 0;
+                    });
+                  },
+                ),
+                const Gap(AppSize.s12),
                 Expanded(
-                  child: Text(
-                    stationEntity.trafficStatus.arabicShortLabel,
-                    maxLines: 2,
-                    textAlign: TextAlign.start,
-                    style: AppStyles.getBold(
-                      context: context,
-                      color: const Color(0xFF4A5957),
-                      fontSize: AppSize.s12,
-                    ),
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 300),
+                    switchInCurve: Curves.easeOutCubic,
+                    switchOutCurve: Curves.easeInCubic,
+                    transitionBuilder: (child, animation) {
+                      final slideAnimation = Tween<Offset>(
+                        begin: const Offset(0.05, 0.0),
+                        end: Offset.zero,
+                      ).animate(animation);
+
+                      return FadeTransition(
+                        opacity: animation,
+                        child: SlideTransition(
+                          position: slideAnimation,
+                          child: child,
+                        ),
+                      );
+                    },
+                    child: selectIndexTab != 1
+                        ? ListReportToday(
+                            key: const ValueKey('today_report_list'),
+                            appContext: appContext,
+                            reports: state.todayReports,
+                          )
+                        : StationTimelineListWidget(
+                            key: const ValueKey('station_history'),
+                            historyEntities: state.stationHistory,
+                            onItemToggled: (historyId) {
+                              getIt<StationsBloc>().add(
+                                ToggleHistorySessionExpansionEvent(historyId),
+                              );
+                            },
+                          ),
                   ),
                 ),
               ],
             ),
-          ),
-          const Gap(AppSize.s10),
-          Container(
-            padding: const EdgeInsets.symmetric(
-              horizontal: AppPadding.p8,
-              vertical: AppPadding.p2,
-            ),
-            decoration: ShapeDecoration(
-              color: const Color(0xFFFCF4DC),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(AppSize.s10),
-              ),
-            ),
-            child: Column(
-              children: [
-                Text(
-                  '+%${stationEntity.trafficDelayRatio ?? 0}',
-                  style: AppStyles.getExtraBold(
-                    context: context,
-                    color: const Color(0xFF11201F),
-                    fontSize: AppSize.s15,
-                  ),
-                ),
-                Text(
-                  appContext.localText.letency,
-                  style: AppStyles.getMeduim(
-                    context: context,
-                    color: Color(0xFF4A5957),
-                    fontSize: AppSize.s12,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
+          );
+        },
       ),
-    );
-  }
-}
-
-class StationHistoryStateWidget extends StatelessWidget {
-  const new({
-    super.key,
-    required this.appContext,
-    required this.stationEntity,
-  });
-
-  final AppContext appContext;
-  final StationEntity stationEntity;
-
-  @override
-  Widget build(BuildContext context) {
-    String getOfficialStatusDetails() {
-      if (stationEntity.statusNotes != null && stationEntity.statusNotes!.trim().isNotEmpty) {
-        return stationEntity.statusNotes!;
-      }
-      final amount = (stationEntity.lastFuelAmount != null && stationEntity.lastFuelAmount!.trim().isNotEmpty)
-          ? ' (${stationEntity.lastFuelAmount})'
-          : '';
-      return '${stationEntity.status.arabicLabel}$amount';
-    }
-
-    return Stack(
-      clipBehavior: Clip.none,
-      children: [
-        Container(
-          width: double.infinity,
-          height: 100,
-          decoration: BoxDecoration(
-            color: const Color(0xFFF08A00),
-            borderRadius: BorderRadius.circular(24),
-          ),
-        ),
-        Positioned(
-          top: 0,
-          bottom: 0,
-          left: 0,
-          right: 10,
-          child: Container(
-            decoration: const BoxDecoration(
-              color: Color(0xFFFFF6E5),
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(14),
-                bottomLeft: Radius.circular(14),
-                topRight: Radius.circular(24),
-                bottomRight: Radius.circular(24),
-              ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.only(
-                left: AppPadding.p12,
-                bottom: AppPadding.p10,
-                top: AppPadding.p10,
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Gap(AppSize.s16),
-                  SvgPicture.asset(
-                    width: AppSize.s45,
-                    height: AppSize.s45,
-                    AppAssets.stateStaion,
-                    fit: BoxFit.cover,
-                  ),
-                  const Gap(AppSize.s12),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          appContext.localText.station_statee,
-                          style: AppStyles.getBold(
-                            context: context,
-                            color: const Color(0xFFB54708),
-                            fontSize: AppSize.s16,
-                          ),
-                        ),
-                        const Gap(AppSize.s5),
-                        Text(
-                          getOfficialStatusDetails(),
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: AppStyles.getBold(
-                            context: context,
-                            color: const Color(0xFF11201F),
-                            fontSize: AppSize.s14,
-                          ),
-                        ),
-                        const Gap(AppSize.s5),
-                        Row(
-                          children: [
-                            SvgPicture.asset(
-                              width: AppSize.s16,
-                              height: AppSize.s16,
-                              AppAssets.clock,
-                              fit: BoxFit.cover,
-                            ),
-                            const Gap(AppSize.s5),
-                            Text(
-                              stationEntity.lastUpdatedRelativeText ?? '',
-                              textAlign: TextAlign.right,
-                              style: AppStyles.getMeduim(
-                                context: context,
-                                color: const Color(0xFF4A5957),
-                                fontSize: AppSize.s14,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class HeaderSationHistory extends StatelessWidget {
-  const new({
-    super.key,
-    required this.stationEntity,
-  });
-
-  final StationEntity stationEntity;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          width: AppSize.s50,
-          height: AppSize.s50,
-          margin: const EdgeInsets.only(right: AppPadding.p20),
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: AppColors.white,
-            border: Border.all(width: 1, color: AppColors.border),
-          ),
-          child: Center(
-            child: Icon(
-              Icons.arrow_back_ios_new,
-              size: AppSize.s25,
-            ),
-          ),
-        ),
-        const Gap(AppSize.s5),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                stationEntity.name,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: AppStyles.getExtraBold(
-                  context: context,
-                  color: const Color(0xFF4A5957),
-                  fontSize: AppSize.s20,
-                ),
-              ),
-            ],
-          ),
-        ),
-        Container(
-          width: AppSize.s50,
-          height: AppSize.s50,
-          margin: const EdgeInsets.only(left: AppPadding.p20),
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: AppColors.primary,
-          ),
-          child: Center(
-            child: Icon(
-              Icons.star,
-              color: AppColors.white,
-              size: AppSize.s25,
-            ),
-          ),
-        ),
-      ],
     );
   }
 }

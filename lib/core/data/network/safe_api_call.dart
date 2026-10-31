@@ -21,6 +21,8 @@ Future<Either<Failure, T>> safeApiCall<T>({
       return Left(ErrorHandling.handel(error).failure);
     } on AuthApiException catch (error) {
       return Left(ErrorHandling.handel(error).failure);
+    } on AuthException catch (error) {
+      return Left(ErrorHandling.handel(error).failure);
     } on Failure catch (error) {
       return Left(ErrorHandling.handel(error).failure);
     } catch (error) {

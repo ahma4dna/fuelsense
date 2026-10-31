@@ -179,4 +179,121 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get reports_today_uers => 'آراء المتواجدين اليوم ';
+
+  @override
+  String get reports_today_uers_hint => 'آراء المستخدمين تعكس مشاهدات اليوم من موقع المحطة ولا\nتغير الحالة أعلاه.';
+
+  @override
+  String get submit_report_user => ' أؤكد هذا الوضع الآن';
+
+  @override
+  String get history_this_station_not_avialeble => 'سجل هذه المحطة غير متوفر';
+
+  @override
+  String get not_report => 'لايوجد ارأ بعد';
+
+  @override
+  String get name_error => ' يرجى إدخال الاسم الكامل';
+
+  @override
+  String get email_error => ' صيغة البريد الإلكتروني غير صحيحة';
+
+  @override
+  String get password_error => 'كلمة المرور يجب أن تكون 8 أحرف على الأقل وتحتوي رقماً';
+
+  @override
+  String get accepted_terms => 'يرجى الموافقة على شروط الاستخدام وسياسة الخصوصية للمتابعة';
+
+  @override
+  String get error_crate_account => 'تعذر إنشاء الحساب';
+
+  @override
+  String get create_new_account => 'إنشاء حساب جديد';
+
+  @override
+  String get create_new_account_title => 'انضم للمتواجدين وساهم في توثيق حالة المحطات';
+
+  @override
+  String get sin_up_google => 'التسجيل عبر جوجل';
+
+  @override
+  String get or_sin_up_email => 'أو أنشئ حساباً بالبريد الإلكتروني';
+
+  @override
+  String get full_name => 'الاسم الكامل';
+
+  @override
+  String get week => 'ضعيفة';
+
+  @override
+  String get medium => 'متوسطة';
+
+  @override
+  String get strong => 'قوية';
+
+  @override
+  String get strong_pasword => 'قوة كلمة المرور';
+
+  @override
+  String get warrning_password => 'ثمانية أحرف على الأقل، وتحتوي رقماً';
+
+  @override
+  String get email => 'البريد الإلكتروني';
+
+  @override
+  String get password => 'كلمة المرور';
+
+  @override
+  String get accept => 'أوافق على';
+
+  @override
+  String get and => 'و';
+
+  @override
+  String get privcy => 'سياسة الخصوصية';
+
+  @override
+  String get terms => 'شروط الاستخدام';
+
+  @override
+  String get create_account => 'إنشاء الحساب';
+
+  @override
+  String get you_have_account => 'لديك حساب بالفعل؟ ';
+
+  @override
+  String get sign_in => 'سجّل الدخول';
+
+  @override
+  String get email_hint => 'اكتب بريدك الإلكتروني';
+
+  @override
+  String get forgot_password => 'نسيت كلمة المرور؟';
+
+  @override
+  String get enter_email_for_reset => 'يرجى كتابة بريدك الإلكتروني أولاً في الحقل المخصص لإرسال رابط الاستعادة';
+
+  @override
+  String get password_reset_sent => 'تم إرسال رابط استعادة كلمة المرور إلى بريدك الإلكتروني';
+
+  @override
+  String get login_error => 'حدث خطأ أثناء تسجيل الدخول';
+
+  @override
+  String get login => 'تسجيل الدخول';
+
+  @override
+  String get or => 'أو';
+
+  @override
+  String get continue_with_google => 'المتابعة عبر جوجل';
+
+  @override
+  String get no_account => 'ليس لديك حساب؟ ';
+
+  @override
+  String get welcome_back => 'مرحباً بعودتك';
+
+  @override
+  String get login_subtitle => 'سجّل دخولك لمتابعة محطات مدينتك';
 }

@@ -71,6 +71,7 @@ enum ConfirmReportStatus {
   idle,
   confirming,
   success,
+  loading,
   outOfRangeError,
   error,
 }

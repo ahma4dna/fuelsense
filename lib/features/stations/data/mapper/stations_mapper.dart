@@ -48,6 +48,7 @@ extension FieldReportModelMapper on FieldReportModel {
     final created = createdAt ?? DateTime.now();
     return FieldReportEntity(
       id: id ?? 0,
+      nameUer: nameUser ?? "",
       userId: userId ?? '',
       stationId: stationId ?? 0,
       historyId: historyId,

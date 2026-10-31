@@ -7,7 +7,6 @@ list(APPEND FLUTTER_PLUGIN_LIST
   connectivity_plus
   flutter_localization
   geolocator_windows
-  share_plus
   url_launcher_windows
 )
 

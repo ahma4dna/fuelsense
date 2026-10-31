@@ -9,6 +9,7 @@ part of 'field_report_model.dart';
 FieldReportModel _$FieldReportModelFromJson(Map<String, dynamic> json) =>
     FieldReportModel(
       id: (json['id'] as num?)?.toInt(),
+      nameUser: json['name_user'] as String?,
       userId: json['user_id'] as String?,
       stationId: (json['station_id'] as num?)?.toInt(),
       historyId: (json['history_id'] as num?)?.toInt(),
@@ -33,6 +34,7 @@ FieldReportModel _$FieldReportModelFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$FieldReportModelToJson(FieldReportModel instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'name_user': instance.nameUser,
       'user_id': instance.userId,
       'station_id': instance.stationId,
       'history_id': instance.historyId,

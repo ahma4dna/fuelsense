@@ -44,6 +44,9 @@ abstract class AppAssets {
   static const String stateStaion = "assets/icons/svg/state_staion.svg";
   static const String clock = "assets/icons/svg/clock.svg";
   static const String doublePeson = "assets/icons/svg/double_peson.svg";
+  static const String userAvatar = "assets/icons/svg/user_avatar.svg";
+  static const String like = "assets/icons/svg/like.svg";
+  static const String gasStation = "assets/icons/svg/local_gas_station_rounded.svg";
 
   //map style
   static const String mapStyle = "assets/icons/map_style/map_init.json";
