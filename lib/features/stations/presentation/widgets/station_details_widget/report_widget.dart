@@ -34,11 +34,6 @@ class ReportWidget extends StatelessWidget {
     }
   }
 
-  String _getConfirmationDetailsText() {
-    final lastTime = StationGeoAndTimeUtils.formatRelativeArabic(report.lastConfirmedAt);
-    return "(أكدها ${report.confirmationsCount} من المتواجدين - آخرهم $lastTime)";
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -155,55 +150,55 @@ class ReportWidget extends StatelessWidget {
             ),
           ),
           const Gap(AppSize.s10),
-          Container(
-            padding: const EdgeInsets.symmetric(
-              horizontal: AppPadding.p12,
-              vertical: AppPadding.p10,
-            ),
-            decoration: ShapeDecoration(
-              color: const Color(0xFFEEF9F7),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-            ),
-            child: Row(
-              children: [
-                InkWell(
-                  onTap: () {},
-                  child: Icon(
-                    Icons.thumb_up_outlined,
-                    color: AppColors.primary,
-                    size: AppSize.s22,
-                  ),
-                ),
-                const Gap(AppSize.s6),
-                Expanded(
-                  child: RichText(
-                    text: TextSpan(
-                      style: AppStyles.getBold(
-                        context: context,
-                        color: const Color(0xFF083A38),
-                        fontSize: AppSize.s13,
-                      ),
-                      children: [
-                        TextSpan(
-                          text: appContext.localText.submit_report_user,
-                        ),
-                        TextSpan(
-                          text: _getConfirmationDetailsText(),
-                          style: AppStyles.getMeduim(
-                            context: context,
-                            color: const Color(0xFF4A5957),
-                            fontSize: AppSize.s13,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
+          // Container(
+          //   padding: const EdgeInsets.symmetric(
+          //     horizontal: AppPadding.p12,
+          //     vertical: AppPadding.p10,
+          //   ),
+          //   decoration: ShapeDecoration(
+          //     color: const Color(0xFFEEF9F7),
+          //     shape: RoundedRectangleBorder(
+          //       borderRadius: BorderRadius.circular(12),
+          //     ),
+          //   ),
+          //   child: Row(
+          //     children: [
+          //       InkWell(
+          //         onTap: () {},
+          //         child: Icon(
+          //           Icons.thumb_up_outlined,
+          //           color: AppColors.primary,
+          //           size: AppSize.s22,
+          //         ),
+          //       ),
+          //       const Gap(AppSize.s6),
+          //       Expanded(
+          //         child: RichText(
+          //           text: TextSpan(
+          //             style: AppStyles.getBold(
+          //               context: context,
+          //               color: const Color(0xFF083A38),
+          //               fontSize: AppSize.s13,
+          //             ),
+          //             children: [
+          //               TextSpan(
+          //                 text: appContext.localText.submit_report_user,
+          //               ),
+          //               TextSpan(
+          //                 text: _getConfirmationDetailsText(),
+          //                 style: AppStyles.getMeduim(
+          //                   context: context,
+          //                   color: const Color(0xFF4A5957),
+          //                   fontSize: AppSize.s13,
+          //                 ),
+          //               ),
+          //             ],
+          //           ),
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          // ),
         ],
       ),
     );

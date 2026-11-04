@@ -18,7 +18,7 @@ import 'package:fuelsense/features/stations/presentation/bloc/stations_bloc.dart
 import 'package:fuelsense/features/stations/presentation/bloc/stations_event.dart';
 import 'package:fuelsense/features/stations/presentation/bloc/stations_state.dart';
 import 'package:fuelsense/features/stations/presentation/function/function_home_page.dart';
-import 'package:fuelsense/features/stations/presentation/routes/home_path.dart';
+import 'package:fuelsense/features/stations/presentation/routes/stations_path.dart';
 import 'package:fuelsense/features/stations/presentation/widgets/home_screen_widget/filter_list.dart';
 import 'package:fuelsense/features/stations/presentation/widgets/home_screen_widget/my_location_and_togle_style_map.dart';
 import 'package:fuelsense/features/stations/presentation/widgets/home_screen_widget/search_and_notification_header_widget.dart';
@@ -26,14 +26,14 @@ import 'package:fuelsense/features/stations/presentation/widgets/home_screen_wid
 import 'package:go_router/go_router.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class StationsPage extends StatefulWidget {
+  const StationsPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<StationsPage> createState() => _StationsPageState();
 }
 
-class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
+class _StationsPageState extends State<StationsPage> with WidgetsBindingObserver {
   late CameraPosition _initialCameraPosition;
   late GoogleMapController _googleMapController;
   LatLng? myLocation;

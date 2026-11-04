@@ -11,6 +11,8 @@ import 'package:fuelsense/features/stations/domain/entities/station_entity.dart'
 import 'package:fuelsense/features/stations/domain/enums/station_enums.dart';
 import 'package:fuelsense/features/stations/domain/extensions/station_extensions.dart';
 import 'package:fuelsense/features/stations/presentation/bloc/stations_state.dart';
+import 'package:fuelsense/features/stations/presentation/widgets/station_details_widget/delay_percentage_badge.dart';
+import 'package:fuelsense/features/stations/presentation/widgets/station_details_widget/three_segment_traffic_gauge.dart';
 import 'package:gap/gap.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:skeletonizer/skeletonizer.dart';
@@ -34,23 +36,67 @@ class StationWidget extends StatelessWidget {
   final VoidCallback? onOpenRoutePressed;
 
   String _getDistanceInKm() {
-    if (selectedStation == null || userLocation == null) return '--';
-    final meters = selectedStation!.distanceFromUser(
-      userLat: userLocation!.latitude,
-      userLng: userLocation!.longitude,
+    final station = selectedStation;
+    final location = userLocation;
+
+    if (station == null || location == null) return '--';
+
+    final meters = station.distanceFromUser(
+      userLat: location.latitude,
+      userLng: location.longitude,
     );
+
     return (meters / 1000).toStringAsFixed(1);
   }
 
   String _getOfficialStatusDetails() {
-    if (selectedStation == null) return '';
-    if (selectedStation!.statusNotes != null && selectedStation!.statusNotes!.trim().isNotEmpty) {
-      return selectedStation!.statusNotes!;
+    final station = selectedStation;
+
+    if (station == null) return '';
+
+    final notes = station.statusNotes?.trim();
+
+    if (notes != null && notes.isNotEmpty) {
+      return notes;
     }
-    final amount = (selectedStation!.lastFuelAmount != null && selectedStation!.lastFuelAmount!.trim().isNotEmpty)
-        ? ' (${selectedStation!.lastFuelAmount})'
-        : '';
-    return '${selectedStation!.status.arabicLabel}$amount';
+
+    final fuelAmount = station.lastFuelAmount?.trim();
+
+    final amount = fuelAmount != null && fuelAmount.isNotEmpty ? ' ($fuelAmount)' : '';
+
+    return '${station.status.arabicLabel}$amount';
+  }
+
+  String get fullTraffic {
+    final station = selectedStation;
+
+    if (station == null) return '';
+
+    final delay = station.trafficDelayRatio;
+    final description = station.trafficDescription;
+
+    return delay > 0 ? 'حالة الطريق: $description (+$delay% تأخير)' : 'حالة الطريق: $description';
+  }
+
+  Color get _statusAccentColor {
+    switch (selectedStation?.status) {
+      case OfficialStationStatus.open:
+        return const Color(0xFF16A34A);
+
+      case OfficialStationStatus.refilling:
+        return const Color(0xFFF08A00);
+
+      case OfficialStationStatus.onTheWay:
+        return const Color(0xFF0F6E67);
+
+      case OfficialStationStatus.closed:
+      case OfficialStationStatus.outOfFuel:
+        return const Color(0xFFD92D20);
+
+      case OfficialStationStatus.unknown:
+      case null:
+        return const Color(0xFF7B8886);
+    }
   }
 
   @override
@@ -138,7 +184,7 @@ class StationWidget extends StatelessWidget {
                     width: double.infinity,
                     height: 100,
                     decoration: BoxDecoration(
-                      color: const Color(0xFFF08A00),
+                      color: _statusAccentColor,
                       borderRadius: BorderRadius.circular(24),
                     ),
                   ),
@@ -148,8 +194,12 @@ class StationWidget extends StatelessWidget {
                     left: 0,
                     right: 10,
                     child: Container(
-                      decoration: const BoxDecoration(
-                        color: Color(0xFFFFF6E5),
+                      decoration: BoxDecoration(
+                        color: AppColors.white,
+                        border: Border.all(
+                          color: const Color(0xFFE6E2D9),
+                          width: 1,
+                        ),
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(14),
                           bottomLeft: Radius.circular(14),
@@ -230,77 +280,41 @@ class StationWidget extends StatelessWidget {
               ),
               const Gap(AppSize.s8),
               Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: AppPadding.p12,
-                  vertical: AppPadding.p8,
-                ),
+                width: double.infinity,
+                padding: const EdgeInsets.all(14),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFFAF9F6),
-                  borderRadius: BorderRadius.circular(AppSize.s14),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
                   border: Border.all(
+                    color: const Color(0xFFE6E2D9),
                     width: 1,
-                    color: AppColors.border,
                   ),
                 ),
-                child: Row(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Expanded(
-                      child: Row(
-                        children: [
-                          Text(
-                            appContext.localText.route_nigber_station,
-                            textAlign: TextAlign.right,
-                            style: AppStyles.getBold(
-                              context: context,
-                              color: const Color(0xFF4A5957),
-                              fontSize: AppSize.s12,
-                            ),
-                          ),
-                          const Gap(AppSize.s5),
-                          Text(
-                            selectedStation?.trafficStatus.arabicShortLabel ?? '',
-                            textAlign: TextAlign.right,
-                            style: AppStyles.getBold(
-                              context: context,
-                              color: const Color(0xFF4A5957),
-                              fontSize: AppSize.s12,
-                            ),
-                          ),
-                        ],
+                    Text(
+                      fullTraffic,
+                      style: AppStyles.getBold(
+                        context: context,
+                        fontSize: AppSize.s14,
+                        color: const Color(0xFF4A5957),
                       ),
                     ),
-                    const Gap(AppSize.s10),
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: AppPadding.p8,
-                        vertical: AppPadding.p2,
-                      ),
-                      decoration: ShapeDecoration(
-                        color: const Color(0xFFFCF4DC),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(AppSize.s10),
+                    const Gap(AppSize.s12),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: ThreeSegmentTrafficGauge(
+                            trafficLevel: selectedStation?.trafficStatus ?? TrafficLevel.normal,
+                          ),
                         ),
-                      ),
-                      child: Column(
-                        children: [
-                          Text(
-                            '+%${selectedStation?.trafficDelayRatio ?? 0}',
-                            style: AppStyles.getExtraBold(
-                              context: context,
-                              color: const Color(0xFF11201F),
-                              fontSize: AppSize.s15,
-                            ),
-                          ),
-                          Text(
-                            appContext.localText.letency,
-                            style: AppStyles.getMeduim(
-                              context: context,
-                              color: Color(0xFF4A5957),
-                              fontSize: AppSize.s12,
-                            ),
-                          ),
-                        ],
-                      ),
+                        const Gap(AppSize.s12),
+                        DelayPercentageBadge(
+                          delayPercentage: selectedStation?.trafficDelayRatio ?? 0,
+                          trafficLevel: selectedStation?.trafficStatus ?? TrafficLevel.normal,
+                        ),
+                      ],
                     ),
                   ],
                 ),

@@ -58,22 +58,22 @@ class HeaderSationHistory extends StatelessWidget {
             ],
           ),
         ),
-        Container(
-          width: AppSize.s50,
-          height: AppSize.s50,
-          margin: const EdgeInsets.only(left: AppPadding.p20),
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: AppColors.primary,
-          ),
-          child: Center(
-            child: Icon(
-              Icons.star,
-              color: AppColors.white,
-              size: AppSize.s25,
-            ),
-          ),
-        ),
+        // Container(
+        //   width: AppSize.s50,
+        //   height: AppSize.s50,
+        //   margin: const EdgeInsets.only(left: AppPadding.p20),
+        //   decoration: BoxDecoration(
+        //     shape: BoxShape.circle,
+        //     color: AppColors.primary,
+        //   ),
+        //   child: Center(
+        //     child: Icon(
+        //       Icons.star,
+        //       color: AppColors.white,
+        //       size: AppSize.s25,
+        //     ),
+        //   ),
+        // ),
       ],
     );
   }

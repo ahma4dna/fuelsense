@@ -105,7 +105,6 @@ class TimelineStepRow extends StatelessWidget {
     );
   }
 
-  /// رسم الدائرة الجانبية في الخط الزمني (ممتلئة بهالة فيروزية عند الفتح، ومفرغة عند الطي)
   Widget _buildTimelineNode(bool active) {
     if (active) {
       return Container(

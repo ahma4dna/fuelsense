@@ -176,13 +176,6 @@ class ExpandedTimelineCard extends StatelessWidget {
                     ),
                     children: [
                       TextSpan(
-                        text: 'أرشيف الآراء: ',
-                        style: AppStyles.getMeduim(
-                          context: context,
-                          color: const Color(0xFF11201F),
-                        ),
-                      ),
-                      TextSpan(
                         text: item.archiveSummaryText,
                         style: AppStyles.getMeduim(
                           context: context,

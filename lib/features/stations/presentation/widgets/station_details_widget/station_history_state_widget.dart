@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fuelsense/core/application/resource/app_assets.dart';
+import 'package:fuelsense/core/application/resource/app_colors.dart';
 import 'package:fuelsense/core/application/resource/app_context.dart';
 import 'package:fuelsense/core/application/resource/app_padding.dart';
 import 'package:fuelsense/core/application/resource/app_size.dart';
@@ -14,10 +15,12 @@ class StationHistoryStateWidget extends StatelessWidget {
     super.key,
     required this.appContext,
     required this.stationEntity,
+    required this.color,
   });
 
   final AppContext appContext;
   final StationEntity stationEntity;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +41,7 @@ class StationHistoryStateWidget extends StatelessWidget {
           width: double.infinity,
           height: 150,
           decoration: BoxDecoration(
-            color: const Color(0xFFF08A00),
+            color: color,
             borderRadius: BorderRadius.circular(24),
           ),
         ),
@@ -49,7 +52,7 @@ class StationHistoryStateWidget extends StatelessWidget {
           right: 10,
           child: Container(
             decoration: const BoxDecoration(
-              color: Color(0xFFFFF6E5),
+              color: AppColors.white,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(14),
                 bottomLeft: Radius.circular(14),
