@@ -7,7 +7,6 @@ import 'package:fuelsense/core/application/resource/app_size.dart';
 import 'package:fuelsense/core/application/resource/app_styles.dart';
 import 'package:fuelsense/di/injection.dart';
 import 'package:fuelsense/features/auth/presentation/widgets/auth_text_field.dart';
-import 'package:fuelsense/features/auth/presentation/widgets/rigester/password_strength_meter.dart';
 import 'package:fuelsense/features/auth/routes/reports_path.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
