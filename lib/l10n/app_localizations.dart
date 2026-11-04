@@ -918,6 +918,102 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'تعديل البريد الإلكتروني'**
   String get edit_email;
+
+  /// No description provided for @add_statut_from_location.
+  ///
+  /// In ar, this message translates to:
+  /// **' أضف حالة الميدان الآن '**
+  String get add_statut_from_location;
+
+  /// No description provided for @stations_directory_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'دليل محطات الوقود'**
+  String get stations_directory_title;
+
+  /// No description provided for @filter_by_status_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'تصفية المحطات حسب الحالة'**
+  String get filter_by_status_title;
+
+  /// No description provided for @filter_all_statuses.
+  ///
+  /// In ar, this message translates to:
+  /// **'جميع الحالات'**
+  String get filter_all_statuses;
+
+  /// No description provided for @filter_open_only.
+  ///
+  /// In ar, this message translates to:
+  /// **'المحطات المفتوحة فقط'**
+  String get filter_open_only;
+
+  /// No description provided for @filter_refilling.
+  ///
+  /// In ar, this message translates to:
+  /// **'محطات يتم تفريغ الوقود بها'**
+  String get filter_refilling;
+
+  /// No description provided for @filter_on_the_way.
+  ///
+  /// In ar, this message translates to:
+  /// **'محطات طلبيتها في الطريق'**
+  String get filter_on_the_way;
+
+  /// No description provided for @filter_closed.
+  ///
+  /// In ar, this message translates to:
+  /// **'المحطات المغلقة'**
+  String get filter_closed;
+
+  /// No description provided for @status_refilled.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم التفريغ'**
+  String get status_refilled;
+
+  /// No description provided for @status_on_the_way.
+  ///
+  /// In ar, this message translates to:
+  /// **'في الطريق'**
+  String get status_on_the_way;
+
+  /// No description provided for @status_unknown.
+  ///
+  /// In ar, this message translates to:
+  /// **'غير معروف'**
+  String get status_unknown;
+
+  /// No description provided for @sort_nearest.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأقرب إليك'**
+  String get sort_nearest;
+
+  /// No description provided for @sort_latest_updated.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأحدث تحديثاً'**
+  String get sort_latest_updated;
+
+  /// No description provided for @sort_least_crowded.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأقل ازدحاماً'**
+  String get sort_least_crowded;
+
+  /// No description provided for @empty_filtered_stations.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد محطات مطابقة لخيارات التصفية الحالية'**
+  String get empty_filtered_stations;
+
+  /// No description provided for @today_opinions.
+  ///
+  /// In ar, this message translates to:
+  /// **'آراء اليوم'**
+  String get today_opinions;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -40,6 +40,8 @@
 	<!-- iOS Client ID  -->
 <key>GIDClientID</key>
 <string>25282113440-368p5ee44ucn9nsremjqgv75qeh011m4.apps.googleusercontent.com</string>
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>يحتاج تطبيق FuelSense إلى موقعك الجغرافي للتحقق من تواجدك بالقرب من المحطة عند إرسال بلاغ ميداني.</string>
 
 <!--    Reversed Client ID (URL Scheme) -->
 <key>CFBundleURLTypes</key>

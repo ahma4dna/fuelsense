@@ -23,14 +23,34 @@ import 'package:fuelsense/features/auth/domain/use_case/auth_use_cases.dart'
     as _i398;
 import 'package:fuelsense/features/auth/presentation/bloc/auth_bloc.dart'
     as _i358;
+import 'package:fuelsense/features/stations/data/repository/reports_repository_impl.dart'
+    as _i826;
 import 'package:fuelsense/features/stations/data/repository/stations_repository_imp.dart'
     as _i281;
+import 'package:fuelsense/features/stations/data/sources/reports_remote_data_source.dart'
+    as _i14;
+import 'package:fuelsense/features/stations/domain/repositories/reports_repository.dart'
+    as _i521;
 import 'package:fuelsense/features/stations/domain/repositories/stations_repository.dart'
     as _i245;
 import 'package:fuelsense/features/stations/domain/use_case/stations_use_cases.dart'
     as _i545;
+import 'package:fuelsense/features/stations/domain/use_case/submit_report_use_case.dart'
+    as _i880;
 import 'package:fuelsense/features/stations/presentation/bloc/stations_bloc.dart'
     as _i168;
+import 'package:fuelsense/features/stations/presentation/cubit/add_report_cubit.dart'
+    as _i500;
+import 'package:fuelsense/features/stations_directory/data/repositories/stations_directory_repository_impl.dart'
+    as _i506;
+import 'package:fuelsense/features/stations_directory/data/sources/stations_directory_remote_data_source.dart'
+    as _i490;
+import 'package:fuelsense/features/stations_directory/domain/repositories/stations_directory_repository.dart'
+    as _i916;
+import 'package:fuelsense/features/stations_directory/domain/usecases/get_stations_directory_use_case.dart'
+    as _i912;
+import 'package:fuelsense/features/stations_directory/presentation/bloc/stations_directory_bloc.dart'
+    as _i823;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
@@ -62,10 +82,30 @@ extension GetItInjectableX on _i174.GetIt {
         networkInfo: gh<_i628.NetworkInfo>(),
       ),
     );
+    gh.lazySingleton<_i14.ReportsRemoteDataSource>(
+      () => _i14.ReportsRemoteDataSourceImpl(gh<_i454.SupabaseClient>()),
+    );
+    gh.lazySingleton<_i490.StationsDirectoryRemoteDataSource>(
+      () => _i490.StationsDirectoryRemoteDataSourceImpl(
+        gh<_i454.SupabaseClient>(),
+      ),
+    );
+    gh.lazySingleton<_i916.StationsDirectoryRepository>(
+      () => _i506.StationsDirectoryRepositoryImpl(
+        networkInfo: gh<_i628.NetworkInfo>(),
+        remoteDataSource: gh<_i490.StationsDirectoryRemoteDataSource>(),
+      ),
+    );
     gh.lazySingleton<_i399.AuthRepository>(
       () => _i535.AuthRepositoryImpl(
         networkInfo: gh<_i628.NetworkInfo>(),
         remoteDataSource: gh<_i529.AuthRemoteDataSource>(),
+      ),
+    );
+    gh.lazySingleton<_i521.ReportsRepository>(
+      () => _i826.ReportsRepositoryImpl(
+        networkInfo: gh<_i628.NetworkInfo>(),
+        remoteDataSource: gh<_i14.ReportsRemoteDataSource>(),
       ),
     );
     gh.lazySingleton<_i545.WatchStationsUseCase>(
@@ -130,6 +170,12 @@ extension GetItInjectableX on _i174.GetIt {
         preferencesProvider: gh<_i9.PreferencesProvider>(),
       ),
     );
+    gh.lazySingleton<_i880.SubmitReportUseCase>(
+      () => _i880.SubmitReportUseCase(gh<_i521.ReportsRepository>()),
+    );
+    gh.factory<_i500.AddReportCubit>(
+      () => _i500.AddReportCubit(gh<_i880.SubmitReportUseCase>()),
+    );
     gh.lazySingleton<_i168.StationsBloc>(
       () => _i168.StationsBloc(
         watchStationsUseCase: gh<_i545.WatchStationsUseCase>(),
@@ -143,6 +189,15 @@ extension GetItInjectableX on _i174.GetIt {
         getFavoriteStationIdsUseCase: gh<_i545.GetFavoriteStationIdsUseCase>(),
         toggleFavoriteStationUseCase: gh<_i545.ToggleFavoriteStationUseCase>(),
       ),
+    );
+    gh.lazySingleton<_i912.GetStationsDirectoryUseCase>(
+      () => _i912.GetStationsDirectoryUseCase(
+        gh<_i916.StationsDirectoryRepository>(),
+      ),
+    );
+    gh.factory<_i823.StationsDirectoryBloc>(
+      () =>
+          _i823.StationsDirectoryBloc(gh<_i912.GetStationsDirectoryUseCase>()),
     );
     return this;
   }

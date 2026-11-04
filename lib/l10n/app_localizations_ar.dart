@@ -437,4 +437,52 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get edit_email => 'تعديل البريد الإلكتروني';
+
+  @override
+  String get add_statut_from_location => ' أضف حالة الميدان الآن ';
+
+  @override
+  String get stations_directory_title => 'دليل محطات الوقود';
+
+  @override
+  String get filter_by_status_title => 'تصفية المحطات حسب الحالة';
+
+  @override
+  String get filter_all_statuses => 'جميع الحالات';
+
+  @override
+  String get filter_open_only => 'المحطات المفتوحة فقط';
+
+  @override
+  String get filter_refilling => 'محطات يتم تفريغ الوقود بها';
+
+  @override
+  String get filter_on_the_way => 'محطات طلبيتها في الطريق';
+
+  @override
+  String get filter_closed => 'المحطات المغلقة';
+
+  @override
+  String get status_refilled => 'تم التفريغ';
+
+  @override
+  String get status_on_the_way => 'في الطريق';
+
+  @override
+  String get status_unknown => 'غير معروف';
+
+  @override
+  String get sort_nearest => 'الأقرب إليك';
+
+  @override
+  String get sort_latest_updated => 'الأحدث تحديثاً';
+
+  @override
+  String get sort_least_crowded => 'الأقل ازدحاماً';
+
+  @override
+  String get empty_filtered_stations => 'لا توجد محطات مطابقة لخيارات التصفية الحالية';
+
+  @override
+  String get today_opinions => 'آراء اليوم';
 }

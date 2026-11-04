@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fuelsense/features/account/presentation/pages/account_page.dart';
-import 'package:fuelsense/features/stations/presentation/pages/home_page.dart';
 import 'package:fuelsense/features/main/presentaion/state_manege/bloc/main_bloc.dart';
 import 'package:fuelsense/features/main/presentaion/state_manege/bloc/main_event.dart';
 import 'package:fuelsense/features/main/presentaion/state_manege/bloc/main_state.dart';
 import 'package:fuelsense/features/main/presentaion/widgets/custom_bottom_nav_bar.dart';
 import 'package:fuelsense/features/reports/presentation/pages/reports_page.dart';
-import 'package:fuelsense/features/staionssjs/presentation/pages/stations_page.dart';
+import 'package:fuelsense/features/stations/presentation/pages/stations_page.dart';
+import 'package:fuelsense/features/stations_directory/presentation/pages/stations_directory_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const new({super.key});
@@ -21,8 +21,8 @@ class _MainScreenState extends State<MainScreen> {
   @override
   void initState() {
     _pages = [
-      HomePage(),
       StationsPage(),
+      StationsDirectoryScreen(),
       ReportsPage(),
       AccountPage(),
     ];

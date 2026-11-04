@@ -177,7 +177,23 @@
 
   "resend_reset_link": "إعادة إرسال الرابط",
 
-  "edit_email": "تعديل البريد الإلكتروني"
-
+  "edit_email": "تعديل البريد الإلكتروني",
+  "add_statut_from_location":" أضف حالة الميدان الآن ",
+  "stations_directory_title": "دليل محطات الوقود",
+  "filter_by_status_title": "تصفية المحطات حسب الحالة",
+  "filter_all_statuses": "جميع الحالات",
+  "filter_open_only": "المحطات المفتوحة فقط",
+  "filter_refilling": "محطات يتم تفريغ الوقود بها",
+  "filter_on_the_way": "محطات طلبيتها في الطريق",
+  "filter_closed": "المحطات المغلقة",
+  "status_refilled": "تم التفريغ",
+  "status_on_the_way": "في الطريق",
+  "status_unknown": "غير معروف",
+  "sort_nearest": "الأقرب إليك",
+  "sort_latest_updated": "الأحدث تحديثاً",
+  "sort_least_crowded": "الأقل ازدحاماً",
+  "empty_filtered_stations": "لا توجد محطات مطابقة لخيارات التصفية الحالية",
+  "today_opinions": "آراء اليوم"
+ 
 
 }
