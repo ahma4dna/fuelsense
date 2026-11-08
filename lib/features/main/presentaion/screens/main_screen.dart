@@ -10,7 +10,6 @@ import 'package:fuelsense/features/main/presentaion/widgets/custom_bottom_nav_ba
 import 'package:fuelsense/features/notifications/presentation/pages/notifications_screen.dart';
 import 'package:fuelsense/features/stations/presentation/pages/stations_page.dart';
 import 'package:fuelsense/features/stations_directory/presentation/pages/stations_directory_screen.dart';
-import 'package:go_router/go_router.dart';
 
 class MainScreen extends StatefulWidget {
   const new({super.key});

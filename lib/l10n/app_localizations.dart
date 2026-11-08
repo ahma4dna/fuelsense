@@ -304,7 +304,7 @@ abstract class AppLocalizations {
   /// No description provided for @close.
   ///
   /// In ar, this message translates to:
-  /// **'مغلقة'**
+  /// **'إغلاق'**
   String get close;
 
   /// No description provided for @open.
@@ -1014,6 +1014,174 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'آراء اليوم'**
   String get today_opinions;
+
+  /// No description provided for @account_and_settings.
+  ///
+  /// In ar, this message translates to:
+  /// **'الإعدادات والحساب'**
+  String get account_and_settings;
+
+  /// No description provided for @default_user_name.
+  ///
+  /// In ar, this message translates to:
+  /// **'مستخدم FuelSense'**
+  String get default_user_name;
+
+  /// No description provided for @privacy_and_rules.
+  ///
+  /// In ar, this message translates to:
+  /// **'القوانين والخصوصية'**
+  String get privacy_and_rules;
+
+  /// No description provided for @terms_subtitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'ضوابط استخدام النظام وإرسال البلاغات الميدانية'**
+  String get terms_subtitle;
+
+  /// No description provided for @privacy_subtitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'كيف نحمي بياناتك وموقعك الجغرافي'**
+  String get privacy_subtitle;
+
+  /// No description provided for @about_system.
+  ///
+  /// In ar, this message translates to:
+  /// **'عن المنظومة'**
+  String get about_system;
+
+  /// No description provided for @about_app_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'حول تطبيق FuelSense'**
+  String get about_app_title;
+
+  /// No description provided for @about_app_subtitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعرف على آلية عمل النظام، الذكاء الاصطناعي، والإصدار الحالي'**
+  String get about_app_subtitle;
+
+  /// No description provided for @app_version_badge.
+  ///
+  /// In ar, this message translates to:
+  /// **'v1.0.0'**
+  String get app_version_badge;
+
+  /// No description provided for @logout_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'تسجيل الخروج'**
+  String get logout_title;
+
+  /// No description provided for @logout_confirm_desc.
+  ///
+  /// In ar, this message translates to:
+  /// **'هل أنت متأكد من رغبتك في تسجيل الخروج من حسابك في تطبيق FuelSense؟'**
+  String get logout_confirm_desc;
+
+  /// No description provided for @cancel.
+  ///
+  /// In ar, this message translates to:
+  /// **'إلغاء'**
+  String get cancel;
+
+  /// No description provided for @confirm_logout.
+  ///
+  /// In ar, this message translates to:
+  /// **'تأكيد الخروج'**
+  String get confirm_logout;
+
+  /// No description provided for @logging_out.
+  ///
+  /// In ar, this message translates to:
+  /// **'جاري تسجيل الخروج...'**
+  String get logging_out;
+
+  /// No description provided for @logout_button_label.
+  ///
+  /// In ar, this message translates to:
+  /// **'تسجيل الخروج من الحساب'**
+  String get logout_button_label;
+
+  /// No description provided for @about_hero_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'FuelSense • رصد الوقود الذكي'**
+  String get about_hero_title;
+
+  /// No description provided for @about_version_label.
+  ///
+  /// In ar, this message translates to:
+  /// **'الإصدار 1.0.0 (Production)'**
+  String get about_version_label;
+
+  /// No description provided for @about_app_description.
+  ///
+  /// In ar, this message translates to:
+  /// **'نظام ذكي لدعم القرار المكاني واللحظي، صُمم لمساعدة المواطنين في معرفة حالة محطات الوقود، تتبع الطلبيات، وتفادي الطوابير المزدحمة بدقة وموثوقية عالية.'**
+  String get about_app_description;
+
+  /// No description provided for @about_feature_radar_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'رصد آلي لحظي على مدار الساعة'**
+  String get about_feature_radar_title;
+
+  /// No description provided for @about_feature_radar_subtitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'متابعة مستمرة لبيانات توزيع الوقود وتحديث حالة المحطات تلقائياً.'**
+  String get about_feature_radar_subtitle;
+
+  /// No description provided for @about_feature_traffic_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'تحليل الازدحام المروري الحي'**
+  String get about_feature_traffic_title;
+
+  /// No description provided for @about_feature_traffic_subtitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'قياس نسبة التأخير المروري أمام كل محطة لمعرفة سرعة حركة الطابور.'**
+  String get about_feature_traffic_subtitle;
+
+  /// No description provided for @about_feature_ai_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'ملخصات الذكاء الاصطناعي التوليدي'**
+  String get about_feature_ai_title;
+
+  /// No description provided for @about_feature_ai_subtitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'تحليل بلاغات المتواجدين الموثقة جغرافياً وتلخيصها في توصية سريعة وواضحة.'**
+  String get about_feature_ai_subtitle;
+
+  /// No description provided for @edit_profile_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعديل المعلومات الشخصية'**
+  String get edit_profile_title;
+
+  /// No description provided for @full_name_hint.
+  ///
+  /// In ar, this message translates to:
+  /// **'أدخل اسمك الكامل'**
+  String get full_name_hint;
+
+  /// No description provided for @name_validation_error.
+  ///
+  /// In ar, this message translates to:
+  /// **'يرجى إدخال اسم صحيح (3 أحرف على الأقل)'**
+  String get name_validation_error;
+
+  /// No description provided for @save_changes.
+  ///
+  /// In ar, this message translates to:
+  /// **'حفظ التعديلات'**
+  String get save_changes;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

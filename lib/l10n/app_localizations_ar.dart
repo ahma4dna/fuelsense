@@ -117,7 +117,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get qualtiy_analyze_ai => 'دقة تحليل البصري';
 
   @override
-  String get close => 'مغلقة';
+  String get close => 'إغلاق';
 
   @override
   String get open => 'مفتوحة';
@@ -485,4 +485,89 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get today_opinions => 'آراء اليوم';
+
+  @override
+  String get account_and_settings => 'الإعدادات والحساب';
+
+  @override
+  String get default_user_name => 'مستخدم FuelSense';
+
+  @override
+  String get privacy_and_rules => 'القوانين والخصوصية';
+
+  @override
+  String get terms_subtitle => 'ضوابط استخدام النظام وإرسال البلاغات الميدانية';
+
+  @override
+  String get privacy_subtitle => 'كيف نحمي بياناتك وموقعك الجغرافي';
+
+  @override
+  String get about_system => 'عن المنظومة';
+
+  @override
+  String get about_app_title => 'حول تطبيق FuelSense';
+
+  @override
+  String get about_app_subtitle => 'تعرف على آلية عمل النظام، الذكاء الاصطناعي، والإصدار الحالي';
+
+  @override
+  String get app_version_badge => 'v1.0.0';
+
+  @override
+  String get logout_title => 'تسجيل الخروج';
+
+  @override
+  String get logout_confirm_desc => 'هل أنت متأكد من رغبتك في تسجيل الخروج من حسابك في تطبيق FuelSense؟';
+
+  @override
+  String get cancel => 'إلغاء';
+
+  @override
+  String get confirm_logout => 'تأكيد الخروج';
+
+  @override
+  String get logging_out => 'جاري تسجيل الخروج...';
+
+  @override
+  String get logout_button_label => 'تسجيل الخروج من الحساب';
+
+  @override
+  String get about_hero_title => 'FuelSense • رصد الوقود الذكي';
+
+  @override
+  String get about_version_label => 'الإصدار 1.0.0 (Production)';
+
+  @override
+  String get about_app_description =>
+      'نظام ذكي لدعم القرار المكاني واللحظي، صُمم لمساعدة المواطنين في معرفة حالة محطات الوقود، تتبع الطلبيات، وتفادي الطوابير المزدحمة بدقة وموثوقية عالية.';
+
+  @override
+  String get about_feature_radar_title => 'رصد آلي لحظي على مدار الساعة';
+
+  @override
+  String get about_feature_radar_subtitle => 'متابعة مستمرة لبيانات توزيع الوقود وتحديث حالة المحطات تلقائياً.';
+
+  @override
+  String get about_feature_traffic_title => 'تحليل الازدحام المروري الحي';
+
+  @override
+  String get about_feature_traffic_subtitle => 'قياس نسبة التأخير المروري أمام كل محطة لمعرفة سرعة حركة الطابور.';
+
+  @override
+  String get about_feature_ai_title => 'ملخصات الذكاء الاصطناعي التوليدي';
+
+  @override
+  String get about_feature_ai_subtitle => 'تحليل بلاغات المتواجدين الموثقة جغرافياً وتلخيصها في توصية سريعة وواضحة.';
+
+  @override
+  String get edit_profile_title => 'تعديل المعلومات الشخصية';
+
+  @override
+  String get full_name_hint => 'أدخل اسمك الكامل';
+
+  @override
+  String get name_validation_error => 'يرجى إدخال اسم صحيح (3 أحرف على الأقل)';
+
+  @override
+  String get save_changes => 'حفظ التعديلات';
 }

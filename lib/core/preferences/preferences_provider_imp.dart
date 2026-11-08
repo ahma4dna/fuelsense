@@ -23,8 +23,6 @@ class PreferencesProviderImp implements PreferencesProvider {
 
   @override
   void sinOutAuthMethode() {
-    sharedPreferences.remove(
-      PreferencesSettings.authProviderKey,
-    );
+    sharedPreferences.clear();
   }
 }

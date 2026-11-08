@@ -14,6 +14,16 @@ import 'package:fuelsense/core/data/di/core_module.dart' as _i215;
 import 'package:fuelsense/core/data/network_info/network_info.dart' as _i628;
 import 'package:fuelsense/core/preferences/preferences_provider.dart' as _i9;
 import 'package:fuelsense/core/services/app_notification_service.dart' as _i751;
+import 'package:fuelsense/features/account/data/repositories/account_repository_impl.dart'
+    as _i908;
+import 'package:fuelsense/features/account/data/sources/account_remote_data_source.dart'
+    as _i14;
+import 'package:fuelsense/features/account/domain/repositories/account_repository.dart'
+    as _i733;
+import 'package:fuelsense/features/account/domain/usecases/usecases.dart'
+    as _i87;
+import 'package:fuelsense/features/account/presentation/cubit/account_cubit.dart'
+    as _i749;
 import 'package:fuelsense/features/auth/data/data_source/auth_remote_data_source.dart'
     as _i529;
 import 'package:fuelsense/features/auth/data/repositories/auth_repository_impl.dart'
@@ -39,7 +49,7 @@ import 'package:fuelsense/features/stations/data/repository/reports_repository_i
 import 'package:fuelsense/features/stations/data/repository/stations_repository_imp.dart'
     as _i281;
 import 'package:fuelsense/features/stations/data/sources/reports_remote_data_source.dart'
-    as _i14;
+    as _i15;
 import 'package:fuelsense/features/stations/domain/repositories/reports_repository.dart'
     as _i521;
 import 'package:fuelsense/features/stations/domain/repositories/stations_repository.dart'
@@ -81,6 +91,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i454.SupabaseClient>(() => coreModule.supabaseClient());
     gh.lazySingleton<_i628.NetworkInfo>(() => coreModule.networkInfo());
+    gh.lazySingleton<_i14.AccountRemoteDataSource>(
+      () => _i14.AccountRemoteDataSourceImpl(gh<_i454.SupabaseClient>()),
+    );
     gh.lazySingleton<_i9.PreferencesProvider>(
       () => coreModule.preferencesProvider(gh<_i460.SharedPreferences>()),
     );
@@ -93,8 +106,8 @@ extension GetItInjectableX on _i174.GetIt {
         networkInfo: gh<_i628.NetworkInfo>(),
       ),
     );
-    gh.lazySingleton<_i14.ReportsRemoteDataSource>(
-      () => _i14.ReportsRemoteDataSourceImpl(gh<_i454.SupabaseClient>()),
+    gh.lazySingleton<_i15.ReportsRemoteDataSource>(
+      () => _i15.ReportsRemoteDataSourceImpl(gh<_i454.SupabaseClient>()),
     );
     gh.lazySingleton<_i751.AppNotificationService>(
       () => _i751.AppNotificationService(gh<_i454.SupabaseClient>()),
@@ -119,6 +132,12 @@ extension GetItInjectableX on _i174.GetIt {
         remoteDataSource: gh<_i529.AuthRemoteDataSource>(),
       ),
     );
+    gh.lazySingleton<_i733.AccountRepository>(
+      () => _i908.AccountRepositoryImpl(
+        remoteDataSource: gh<_i14.AccountRemoteDataSource>(),
+        networkInfo: gh<_i628.NetworkInfo>(),
+      ),
+    );
     gh.lazySingleton<_i546.NotificationsRepository>(
       () => _i800.NotificationsRepositoryImpl(
         remoteDataSource: gh<_i648.NotificationsRemoteDataSource>(),
@@ -128,7 +147,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i521.ReportsRepository>(
       () => _i826.ReportsRepositoryImpl(
         networkInfo: gh<_i628.NetworkInfo>(),
-        remoteDataSource: gh<_i14.ReportsRemoteDataSource>(),
+        remoteDataSource: gh<_i15.ReportsRemoteDataSource>(),
       ),
     );
     gh.lazySingleton<_i545.WatchStationsUseCase>(
@@ -225,8 +244,25 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i151.GetNotificationsUseCase>(
       () => _i151.GetNotificationsUseCase(gh<_i546.NotificationsRepository>()),
     );
+    gh.lazySingleton<_i87.GetAccountProfileUseCase>(
+      () => _i87.GetAccountProfileUseCase(gh<_i733.AccountRepository>()),
+    );
+    gh.lazySingleton<_i87.UpdateAccountProfileUseCase>(
+      () => _i87.UpdateAccountProfileUseCase(gh<_i733.AccountRepository>()),
+    );
+    gh.lazySingleton<_i87.SignOutAccountUseCase>(
+      () => _i87.SignOutAccountUseCase(gh<_i733.AccountRepository>()),
+    );
     gh.factory<_i597.NotificationsBloc>(
       () => _i597.NotificationsBloc(gh<_i151.GetNotificationsUseCase>()),
+    );
+    gh.factory<_i749.AccountCubit>(
+      () => _i749.AccountCubit(
+        gh<_i87.GetAccountProfileUseCase>(),
+        gh<_i87.UpdateAccountProfileUseCase>(),
+        gh<_i87.SignOutAccountUseCase>(),
+        gh<_i9.PreferencesProvider>(),
+      ),
     );
     return this;
   }
