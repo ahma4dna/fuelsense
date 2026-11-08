@@ -13,6 +13,7 @@
 import 'package:fuelsense/core/data/di/core_module.dart' as _i215;
 import 'package:fuelsense/core/data/network_info/network_info.dart' as _i628;
 import 'package:fuelsense/core/preferences/preferences_provider.dart' as _i9;
+import 'package:fuelsense/core/services/app_notification_service.dart' as _i751;
 import 'package:fuelsense/features/auth/data/data_source/auth_remote_data_source.dart'
     as _i529;
 import 'package:fuelsense/features/auth/data/repositories/auth_repository_impl.dart'
@@ -23,6 +24,16 @@ import 'package:fuelsense/features/auth/domain/use_case/auth_use_cases.dart'
     as _i398;
 import 'package:fuelsense/features/auth/presentation/bloc/auth_bloc.dart'
     as _i358;
+import 'package:fuelsense/features/notifications/data/repositories/notifications_repository_impl.dart'
+    as _i800;
+import 'package:fuelsense/features/notifications/data/sources/notifications_remote_data_source.dart'
+    as _i648;
+import 'package:fuelsense/features/notifications/domain/repositories/notifications_repository.dart'
+    as _i546;
+import 'package:fuelsense/features/notifications/domain/usecases/get_notifications_use_case.dart'
+    as _i151;
+import 'package:fuelsense/features/notifications/presentation/bloc/notifications_bloc.dart'
+    as _i597;
 import 'package:fuelsense/features/stations/data/repository/reports_repository_impl.dart'
     as _i826;
 import 'package:fuelsense/features/stations/data/repository/stations_repository_imp.dart'
@@ -85,10 +96,16 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i14.ReportsRemoteDataSource>(
       () => _i14.ReportsRemoteDataSourceImpl(gh<_i454.SupabaseClient>()),
     );
+    gh.lazySingleton<_i751.AppNotificationService>(
+      () => _i751.AppNotificationService(gh<_i454.SupabaseClient>()),
+    );
     gh.lazySingleton<_i490.StationsDirectoryRemoteDataSource>(
       () => _i490.StationsDirectoryRemoteDataSourceImpl(
         gh<_i454.SupabaseClient>(),
       ),
+    );
+    gh.lazySingleton<_i648.NotificationsRemoteDataSource>(
+      () => _i648.NotificationsRemoteDataSourceImpl(gh<_i454.SupabaseClient>()),
     );
     gh.lazySingleton<_i916.StationsDirectoryRepository>(
       () => _i506.StationsDirectoryRepositoryImpl(
@@ -100,6 +117,12 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i535.AuthRepositoryImpl(
         networkInfo: gh<_i628.NetworkInfo>(),
         remoteDataSource: gh<_i529.AuthRemoteDataSource>(),
+      ),
+    );
+    gh.lazySingleton<_i546.NotificationsRepository>(
+      () => _i800.NotificationsRepositoryImpl(
+        remoteDataSource: gh<_i648.NotificationsRemoteDataSource>(),
+        networkInfo: gh<_i628.NetworkInfo>(),
       ),
     );
     gh.lazySingleton<_i521.ReportsRepository>(
@@ -198,6 +221,12 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i823.StationsDirectoryBloc>(
       () =>
           _i823.StationsDirectoryBloc(gh<_i912.GetStationsDirectoryUseCase>()),
+    );
+    gh.lazySingleton<_i151.GetNotificationsUseCase>(
+      () => _i151.GetNotificationsUseCase(gh<_i546.NotificationsRepository>()),
+    );
+    gh.factory<_i597.NotificationsBloc>(
+      () => _i597.NotificationsBloc(gh<_i151.GetNotificationsUseCase>()),
     );
     return this;
   }

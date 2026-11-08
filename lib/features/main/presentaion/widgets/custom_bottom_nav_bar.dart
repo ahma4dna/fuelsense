@@ -70,7 +70,7 @@ class CustomBottomNavBar extends StatelessWidget {
               Expanded(
                 child: _NavItem(
                   index: 2,
-                  label: appContext.localText.city_radar,
+                  label: "مركز الإشعارات",
                   icon: AppAssets.citeyRadar,
                   currentIndex: currentIndex,
                   onTap: onItemSelected,

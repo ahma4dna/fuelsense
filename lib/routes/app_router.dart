@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fuelsense/features/account/routes/account_route.dart';
 import 'package:fuelsense/features/auth/routes/reports_route.dart';
+import 'package:fuelsense/features/notifications/routes/notifications_route.dart';
 import 'package:fuelsense/features/splash/routes/splash_route.dart';
 import 'package:fuelsense/features/stations/presentation/routes/stations_route.dart';
 import 'package:fuelsense/features/main/routes/main_route.dart';
@@ -24,5 +25,6 @@ final GoRouter router = GoRouter(
     termsOfUseRoute,
     privacyPolicyRoute,
     stationsDirectoryRoute,
+    notificationsRoute,
   ],
 );
