@@ -56,12 +56,11 @@ class AccountRemoteDataSourceImpl implements AccountRemoteDataSource {
     try {
       updatedProfileRow = await _supabase
           .from('profiles')
-          .upsert({
-            'id': user.id,
+          .update({
             'full_name': fullName.trim(),
-
             'updated_at': DateTime.now().toIso8601String(),
           })
+          .eq("id", user.id)
           .select()
           .maybeSingle();
     } catch (_) {}

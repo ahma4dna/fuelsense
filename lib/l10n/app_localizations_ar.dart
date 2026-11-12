@@ -502,7 +502,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get privacy_subtitle => 'كيف نحمي بياناتك وموقعك الجغرافي';
 
   @override
-  String get about_system => 'عن المنظومة';
+  String get about_system => 'عنا';
 
   @override
   String get about_app_title => 'حول تطبيق FuelSense';
@@ -570,4 +570,51 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get save_changes => 'حفظ التعديلات';
+
+  @override
+  String get notif_status_open => 'مفتوحة وتعمل';
+
+  @override
+  String get notif_status_refilling => 'تفريغ وقود';
+
+  @override
+  String get notif_status_on_the_way => 'في الطريق';
+
+  @override
+  String get notif_status_out_of_fuel => 'نفد الوقود';
+
+  @override
+  String get notif_status_official_update => 'تحديث رسمي';
+
+  @override
+  String get time_now => 'الآن';
+
+  @override
+  String time_minutes_ago(Object minutes) {
+    return 'منذ $minutes دقيقة';
+  }
+
+  @override
+  String time_hours_ago(Object hours) {
+    return 'منذ $hours ساعة';
+  }
+
+  @override
+  String get filter_all => 'الكل';
+
+  @override
+  String get filter_open_now => 'مفتوحة الآن';
+
+  @override
+  String get empty_notifications_title => 'لا توجد إشعارات حالياً';
+
+  @override
+  String get empty_notifications_subtitle =>
+      'ستصلك التنبيهات هنا وفوق شاشة هاتفك فور صدور أي بيان جديد حول توفر الوقود في المحطات.';
+
+  @override
+  String get notifications_center_title => 'مركز الإشعارات';
+
+  @override
+  String get today_alerts_count => 'تنبيهات اليوم: ';
 }

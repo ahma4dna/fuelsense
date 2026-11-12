@@ -199,7 +199,7 @@
   "privacy_and_rules": "القوانين والخصوصية",
   "terms_subtitle": "ضوابط استخدام النظام وإرسال البلاغات الميدانية",
   "privacy_subtitle": "كيف نحمي بياناتك وموقعك الجغرافي",
-  "about_system": "عن المنظومة",
+  "about_system": "عنا",
   "about_app_title": "حول تطبيق FuelSense",
   "about_app_subtitle": "تعرف على آلية عمل النظام، الذكاء الاصطناعي، والإصدار الحالي",
   "app_version_badge": "v1.0.0",
@@ -222,7 +222,21 @@
   "edit_profile_title": "تعديل المعلومات الشخصية",
   "full_name_hint": "أدخل اسمك الكامل",
   "name_validation_error": "يرجى إدخال اسم صحيح (3 أحرف على الأقل)",
-  "save_changes": "حفظ التعديلات"
- 
+  "save_changes": "حفظ التعديلات",
+  "notif_status_open": "مفتوحة وتعمل",
+  "notif_status_refilling": "تفريغ وقود",
+  "notif_status_on_the_way": "في الطريق",
+  "notif_status_out_of_fuel": "نفد الوقود",
+  "notif_status_official_update": "تحديث رسمي",
+  "time_now": "الآن",
+  "time_minutes_ago": "منذ {minutes} دقيقة",
+  "time_hours_ago": "منذ {hours} ساعة",
+ "filter_all": "الكل",
+  "filter_open_now": "مفتوحة الآن",
+  "empty_notifications_title": "لا توجد إشعارات حالياً",
+  "empty_notifications_subtitle": "ستصلك التنبيهات هنا وفوق شاشة هاتفك فور صدور أي بيان جديد حول توفر الوقود في المحطات.",
+  "notifications_center_title": "مركز الإشعارات",
+  "today_alerts_count": "تنبيهات اليوم: "
+  
 
 }

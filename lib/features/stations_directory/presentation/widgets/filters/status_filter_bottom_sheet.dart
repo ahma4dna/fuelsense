@@ -84,13 +84,20 @@ class StatusFilterBottomSheet extends StatelessWidget {
                 ),
               ),
               const Gap(AppSize.s14),
-              ...filters.map(
-                (item) => StatusFilterTile(
-                  title: item.$2,
-                  isSelected: selectedFilter == item.$1,
-                  onTap: () {
-                    onFilterSelected(item.$1);
-                    Navigator.pop(context);
+              Expanded(
+                child: ListView.builder(
+                  itemCount: filters.length,
+
+                  itemBuilder: (context, index) {
+                    final item = filters[index];
+                    return StatusFilterTile(
+                      title: item.$2,
+                      isSelected: selectedFilter == item.$1,
+                      onTap: () {
+                        onFilterSelected(item.$1);
+                        Navigator.pop(context);
+                      },
+                    );
                   },
                 ),
               ),

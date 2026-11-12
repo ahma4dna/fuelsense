@@ -71,7 +71,7 @@ class CustomBottomNavBar extends StatelessWidget {
                 child: _NavItem(
                   index: 2,
                   label: "مركز الإشعارات",
-                  icon: AppAssets.citeyRadar,
+                  icon: AppAssets.notification,
                   currentIndex: currentIndex,
                   onTap: onItemSelected,
                 ),

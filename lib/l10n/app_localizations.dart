@@ -1048,7 +1048,7 @@ abstract class AppLocalizations {
   /// No description provided for @about_system.
   ///
   /// In ar, this message translates to:
-  /// **'عن المنظومة'**
+  /// **'عنا'**
   String get about_system;
 
   /// No description provided for @about_app_title.
@@ -1182,6 +1182,90 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'حفظ التعديلات'**
   String get save_changes;
+
+  /// No description provided for @notif_status_open.
+  ///
+  /// In ar, this message translates to:
+  /// **'مفتوحة وتعمل'**
+  String get notif_status_open;
+
+  /// No description provided for @notif_status_refilling.
+  ///
+  /// In ar, this message translates to:
+  /// **'تفريغ وقود'**
+  String get notif_status_refilling;
+
+  /// No description provided for @notif_status_on_the_way.
+  ///
+  /// In ar, this message translates to:
+  /// **'في الطريق'**
+  String get notif_status_on_the_way;
+
+  /// No description provided for @notif_status_out_of_fuel.
+  ///
+  /// In ar, this message translates to:
+  /// **'نفد الوقود'**
+  String get notif_status_out_of_fuel;
+
+  /// No description provided for @notif_status_official_update.
+  ///
+  /// In ar, this message translates to:
+  /// **'تحديث رسمي'**
+  String get notif_status_official_update;
+
+  /// No description provided for @time_now.
+  ///
+  /// In ar, this message translates to:
+  /// **'الآن'**
+  String get time_now;
+
+  /// No description provided for @time_minutes_ago.
+  ///
+  /// In ar, this message translates to:
+  /// **'منذ {minutes} دقيقة'**
+  String time_minutes_ago(Object minutes);
+
+  /// No description provided for @time_hours_ago.
+  ///
+  /// In ar, this message translates to:
+  /// **'منذ {hours} ساعة'**
+  String time_hours_ago(Object hours);
+
+  /// No description provided for @filter_all.
+  ///
+  /// In ar, this message translates to:
+  /// **'الكل'**
+  String get filter_all;
+
+  /// No description provided for @filter_open_now.
+  ///
+  /// In ar, this message translates to:
+  /// **'مفتوحة الآن'**
+  String get filter_open_now;
+
+  /// No description provided for @empty_notifications_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد إشعارات حالياً'**
+  String get empty_notifications_title;
+
+  /// No description provided for @empty_notifications_subtitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'ستصلك التنبيهات هنا وفوق شاشة هاتفك فور صدور أي بيان جديد حول توفر الوقود في المحطات.'**
+  String get empty_notifications_subtitle;
+
+  /// No description provided for @notifications_center_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'مركز الإشعارات'**
+  String get notifications_center_title;
+
+  /// No description provided for @today_alerts_count.
+  ///
+  /// In ar, this message translates to:
+  /// **'تنبيهات اليوم: '**
+  String get today_alerts_count;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

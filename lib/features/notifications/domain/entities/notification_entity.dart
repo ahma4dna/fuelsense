@@ -4,7 +4,7 @@ class NotificationEntity extends Equatable {
   final int id;
   final int? stationId;
   final String city;
-  final String notificationType; // 'open', 'refilling', 'on_the_way', 'out_of_fuel', 'official'
+  final String notificationType;
   final String title;
   final String body;
   final DateTime createdAt;
@@ -34,7 +34,6 @@ class NotificationEntity extends Equatable {
     );
   }
 
-  /// استنتاج نوع الحالة تلقائياً من النص أو الحقل لتلوين الأيقونة بدقة
   String get resolvedStatusCategory {
     final type = notificationType.toLowerCase();
     if (type == 'open' || body.contains('باشرت') || body.contains('توزيع')) {

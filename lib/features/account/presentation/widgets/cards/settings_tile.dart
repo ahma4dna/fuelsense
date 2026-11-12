@@ -95,7 +95,7 @@ class SettingsTile extends StatelessWidget {
               const Gap(AppSize.s6),
             ],
             Icon(
-              appContext.isRt ? Icons.chevron_left_rounded : Icons.chevron_right_rounded,
+              appContext.isRt ? Icons.chevron_right_rounded : Icons.chevron_left_rounded,
               color: const Color(0xFF8C9896),
               size: AppSize.s24,
             ),
