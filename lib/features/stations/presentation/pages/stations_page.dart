@@ -205,7 +205,6 @@ class _StationsPageState extends State<StationsPage> with WidgetsBindingObserver
                   onCameraMove: (CameraPosition position) {
                     if ((_currentZoom - position.zoom).abs() > 0.8) {
                       _currentZoom = position.zoom;
-                      // Debounce: لا نعيد بناء الماركرز أثناء الـ pinch المستمر
                       _zoomDebounce?.cancel();
                       _zoomDebounce = Timer(const Duration(milliseconds: 180), () {
                         if (mounted && _currentStations.isNotEmpty) {

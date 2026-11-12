@@ -6,6 +6,9 @@ import 'package:fuelsense/core/application/resource/app_colors.dart';
 import 'package:fuelsense/core/application/resource/app_context.dart';
 import 'package:fuelsense/core/application/resource/app_size.dart';
 import 'package:fuelsense/core/application/resource/app_styles.dart';
+import 'package:fuelsense/di/injection.dart';
+import 'package:fuelsense/features/main/presentaion/state_manege/bloc/main_bloc.dart';
+import 'package:fuelsense/features/main/presentaion/state_manege/bloc/main_event.dart';
 import 'package:fuelsense/features/stations/domain/entities/station_entity.dart';
 import 'package:fuelsense/features/stations/presentation/bloc/stations_bloc.dart';
 import 'package:fuelsense/features/stations/presentation/bloc/stations_event.dart';
@@ -93,11 +96,16 @@ class SearchAndNotificationHeaderWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Center(
-                child: SvgPicture.asset(
-                  AppAssets.notification,
-                  width: AppSize.s22,
-                  height: AppSize.s22,
+              child: GestureDetector(
+                onTap: () {
+                  context.read<MainBloc>().add(ChangeTabEvent(selctIndex: 2));
+                },
+                child: Center(
+                  child: SvgPicture.asset(
+                    AppAssets.notification,
+                    width: AppSize.s22,
+                    height: AppSize.s22,
+                  ),
                 ),
               ),
             ),
